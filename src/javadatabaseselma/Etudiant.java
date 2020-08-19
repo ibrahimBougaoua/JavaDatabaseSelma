@@ -33,6 +33,76 @@ public class Etudiant {
         this.DATE_NAISSANCE = new SimpleStringProperty(DATE_NAISSANCE);
         this.ADDRESSE = new SimpleStringProperty(ADDRESSE);
     }
+
+    /**
+     * @return the MATRICULE_ETU
+     */
+    public SimpleIntegerProperty getMATRICULE_ETU() {
+        return MATRICULE_ETU;
+    }
+
+    /**
+     * @param MATRICULE_ETU the MATRICULE_ETU to set
+     */
+    public void setMATRICULE_ETU(SimpleIntegerProperty MATRICULE_ETU) {
+        this.MATRICULE_ETU = MATRICULE_ETU;
+    }
+
+    /**
+     * @return the NOM_ETU
+     */
+    public SimpleStringProperty getNOM_ETU() {
+        return NOM_ETU;
+    }
+
+    /**
+     * @param NOM_ETU the NOM_ETU to set
+     */
+    public void setNOM_ETU(SimpleStringProperty NOM_ETU) {
+        this.NOM_ETU = NOM_ETU;
+    }
+
+    /**
+     * @return the PRENOM_ETU
+     */
+    public SimpleStringProperty getPRENOM_ETU() {
+        return PRENOM_ETU;
+    }
+
+    /**
+     * @param PRENOM_ETU the PRENOM_ETU to set
+     */
+    public void setPRENOM_ETU(SimpleStringProperty PRENOM_ETU) {
+        this.PRENOM_ETU = PRENOM_ETU;
+    }
+
+    /**
+     * @return the DATE_NAISSANCE
+     */
+    public SimpleStringProperty getDATE_NAISSANCE() {
+        return DATE_NAISSANCE;
+    }
+
+    /**
+     * @param DATE_NAISSANCE the DATE_NAISSANCE to set
+     */
+    public void setDATE_NAISSANCE(SimpleStringProperty DATE_NAISSANCE) {
+        this.DATE_NAISSANCE = DATE_NAISSANCE;
+    }
+
+    /**
+     * @return the ADDRESSE
+     */
+    public SimpleStringProperty getADDRESSE() {
+        return ADDRESSE;
+    }
+
+    /**
+     * @param ADDRESSE the ADDRESSE to set
+     */
+    public void setADDRESSE(SimpleStringProperty ADDRESSE) {
+        this.ADDRESSE = ADDRESSE;
+    }
     
     
     
