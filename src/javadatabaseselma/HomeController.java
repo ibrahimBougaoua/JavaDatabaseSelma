@@ -17,6 +17,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -27,122 +31,80 @@ import javafx.stage.Stage;
 public class HomeController implements Initializable {
 
     @FXML
-    TextField firstname;
+    TextField Matricule_etu;
     
     @FXML
-    Label messageF;
+    Label messageME;
     
     @FXML
-    TextField lastname;
+    TextField nom_etu;
     
     @FXML
-    Label messageL;
+    Label messageNE;
     
     @FXML
-    TextField username;
+    TextField prenom_etu;
     
     @FXML
-    Label messageU;
+    Label messagePE;
     
     @FXML
-    TextField email;
+    TextField date_naissance;
     
     @FXML
-    Label messageE;
+    Label messageDE;
     
     @FXML
-    TextField password;
+    TextField Addresse;
+  
+    @FXML
+    Label messageAE;
     
     @FXML
-    Label messageP;
-    
-    @FXML
-    TextField confirmepassword;
-    
-    @FXML
-    Label messageC;
-    
-    @FXML
-    TextField telephone;
-    
-    @FXML
-    Label messageT;
-    
-    @FXML
-    Button create;
-    
-    @FXML
-    Label messageR;
-    
-    @FXML
-    ChoiceBox choiceBox;
-    
-    @FXML
-    Label gender;
+    Button insert;
     
     @FXML
     public void createUser(ActionEvent e) throws SQLException {
         
         Connection connection = Database.getConnectionDb();
         
-        messageF.setText("");
-        messageL.setText("");
-        messageU.setText("");
-        messageE.setText("");
-        messageP.setText("");
-        messageC.setText("");
-        messageT.setText("");
-        messageR.setText("");
+        messageME.setText("");
+        messageNE.setText("");
+        messagePE.setText("");
+        messageDE.setText("");
+        messageAE.setText("");
         
-        if(firstname.getText().equals(""))
+        if(Matricule_etu.getText().equals(""))
         {
-            messageF.setText("firstname is empty !");
-            messageF.setTextFill(Color.rgb(210, 39, 30));
+            messageME.setText("Matricule is empty !");
+            messageME.setTextFill(Color.rgb(210, 39, 30));
         }
         
-        if(lastname.getText().equals(""))
+        if(nom_etu.getText().equals(""))
         {
-            messageL.setText("lastname is empty !");
-            messageL.setTextFill(Color.rgb(210, 39, 30));
+            messageNE.setText("Nom is empty !");
+            messageNE.setTextFill(Color.rgb(210, 39, 30));
         }
         
-        if(username.getText().equals(""))
+        if(prenom_etu.getText().equals(""))
         {
-            messageU.setText("username is empty !");
-            messageU.setTextFill(Color.rgb(210, 39, 30));
+            messagePE.setText("Prenome is empty !");
+            messagePE.setTextFill(Color.rgb(210, 39, 30));
         }
         
-        if(email.getText().equals(""))
+        if(date_naissance.getText().equals(""))
         {
-            messageE.setText("email is empty !");
-            messageE.setTextFill(Color.rgb(210, 39, 30));
+            messageDE.setText("Date naissance is empty !");
+            messageDE.setTextFill(Color.rgb(210, 39, 30));
         }
         
-        if(password.getText().equals(""))
+        if(Addresse.getText().equals(""))
         {
-            messageP.setText("password is empty !");
-            messageP.setTextFill(Color.rgb(210, 39, 30));
+            messageAE.setText("Addresse is empty !");
+            messageAE.setTextFill(Color.rgb(210, 39, 30));
         }
         
-        
-        if(confirmepassword.getText().equals(""))
-        {
-            messageC.setText("confirme password is empty !");
-            messageC.setTextFill(Color.rgb(210, 39, 30));
-        }
-        
-        if(telephone.getText().equals(""))
-        {
-            messageT.setText("telephone is empty !");
-            messageT.setTextFill(Color.rgb(210, 39, 30));
-        } 
-        
-        if(!choiceBox.getValue().equals(""))
-        {
-            gender.setText(choiceBox.getValue().toString());
-        }
-        
-        if(!firstname.getText().equals(""))
+        if(!Matricule_etu.getText().equals(""))
         {
            if(!lastname.getText().equals(""))
            {
