@@ -5,6 +5,7 @@
  */
 package javadatabaseselma;
 
+import com.mysql.jdbc.PreparedStatement;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -30,6 +31,9 @@ import javafx.stage.Stage;
  */
 public class HomeController implements Initializable {
 
+    
+    // etudiant fields
+    
     @FXML
     TextField Matricule_etu;
     
@@ -59,57 +63,95 @@ public class HomeController implements Initializable {
   
     @FXML
     Label messageAE;
+
+    // etudiant unit fields
+    
+    @FXML
+    TextField Matricule_etu_unit;
+    
+    @FXML
+    Label messageMEU;
+    
+    @FXML
+    TextField code_unit;
+    
+    @FXML
+    Label messageCEU;
+    
+    @FXML
+    TextField note_cc;
+    
+    @FXML
+    Label messageNEU;
+    
+    @FXML
+    TextField note_tp;
+    
+    @FXML
+    Label messageTEU;
+    
+    @FXML
+    TextField note_examen;
+  
+    @FXML
+    Label messageXEU;
     
     @FXML
     Button insert;
     
     @FXML
-    public void createUser(ActionEvent e) throws SQLException {
+    Label messageR;
+            
+    @FXML
+    public void AddEtudiant(ActionEvent e) throws SQLException {
         
         Connection connection = Database.getConnectionDb();
         
-        messageME.setText("");
-        messageNE.setText("");
-        messagePE.setText("");
-        messageDE.setText("");
-        messageAE.setText("");
+        switch (1) {
+            case 1:
+        
+        //messageME.setText("");
+        //messageNE.setText("");
+        //messagePE.setText("");
+        //messageDE.setText("");
+        //messageAE.setText("");
         
         if(Matricule_etu.getText().equals(""))
         {
-            messageME.setText("Matricule is empty !");
-            messageME.setTextFill(Color.rgb(210, 39, 30));
+            //messageME.setText("Matricule is empty !");
+            //messageME.setTextFill(Color.rgb(210, 39, 30));
         }
         
         if(nom_etu.getText().equals(""))
         {
-            messageNE.setText("Nom is empty !");
-            messageNE.setTextFill(Color.rgb(210, 39, 30));
+            //messageNE.setText("Nom is empty !");
+            //messageNE.setTextFill(Color.rgb(210, 39, 30));
         }
         
         if(prenom_etu.getText().equals(""))
         {
-            messagePE.setText("Prenome is empty !");
-            messagePE.setTextFill(Color.rgb(210, 39, 30));
+            //messagePE.setText("Prenome is empty !");
+            //messagePE.setTextFill(Color.rgb(210, 39, 30));
         }
         
         if(date_naissance.getText().equals(""))
         {
-            messageDE.setText("Date naissance is empty !");
-            messageDE.setTextFill(Color.rgb(210, 39, 30));
+            //messageDE.setText("Date naissance is empty !");
+            //messageDE.setTextFill(Color.rgb(210, 39, 30));
         }
         
         if(Addresse.getText().equals(""))
         {
-            messageAE.setText("Addresse is empty !");
-            messageAE.setTextFill(Color.rgb(210, 39, 30));
+            //messageAE.setText("Addresse is empty !");
+            //messageAE.setTextFill(Color.rgb(210, 39, 30));
         }
         
         if(!Matricule_etu.getText().equals(""))
         {
             if( duplicateMatricule(connection,Matricule_etu.getText()) )
             {
-                messageME.setText("duplicate matricule !");
-                messageME.setTextFill(Color.rgb(210, 39, 30));
+                //messageME.setText("duplicate matricule !");
+                //messageME.setTextFill(Color.rgb(210, 39, 30));
             }
            if(!nom_etu.getText().equals(""))
            {
@@ -119,35 +161,105 @@ public class HomeController implements Initializable {
                     {
                         if(!Addresse.getText().equals(""))
                         {
-                                             
-                            String sql = "INSERT INTO users (firstname,lastname,username,email,password,telephone,gender) VALUES (?,?,?,?,?,?,?)";
+                            String sql = "INSERT INTO etudiant (MATRICULE_ETU,NOM_ETU,PRENOM_ETU,DATE_NAISSANCE,ADDRESSE) VALUES (?,?,?,?,?)";
                             PreparedStatement ps = (PreparedStatement) connection.prepareStatement(sql);
-                            ps.setString(1, firstname.getText());
-                            ps.setString(2, lastname.getText());
-                                           ps.setString(3, username.getText());
-                                           ps.setString(4, email.getText());
-                                           ps.setString(5, password.getText());
-                                           ps.setString(6, telephone.getText());
-                                           ps.setString(7, choiceBox.getValue().toString());
-                                           ps.executeUpdate();
-                                           messageR.setText("user added successfully !");
-                                           messageR.setTextFill(Color.GREEN);
-                                           
-                                        }
-                                    } 
-                                }
-                            }
+                            ps.setString(1, Matricule_etu.getText());
+                            ps.setString(2, nom_etu.getText());
+                            ps.setString(3, prenom_etu.getText());
+                            ps.setString(4, date_naissance.getText());
+                            ps.setString(5, Addresse.getText());
+                            ps.executeUpdate();
+                            //messageR.setText("Etudiant added successfully !");
+                            //messageR.setTextFill(Color.GREEN);
                         }
                     }
                 }
             }
         }
-                            
+                     break;
+                     
+                     
+                     
+            case 1:
+        
+        //messageME.setText("");
+        //messageNE.setText("");
+        //messagePE.setText("");
+        //messageDE.setText("");
+        //messageAE.setText("");
+        
+        if(Matricule_etu.getText().equals(""))
+        {
+            //messageME.setText("Matricule is empty !");
+            //messageME.setTextFill(Color.rgb(210, 39, 30));
+        }
+        
+        if(nom_etu.getText().equals(""))
+        {
+            //messageNE.setText("Nom is empty !");
+            //messageNE.setTextFill(Color.rgb(210, 39, 30));
+        }
+        
+        if(prenom_etu.getText().equals(""))
+        {
+            //messagePE.setText("Prenome is empty !");
+            //messagePE.setTextFill(Color.rgb(210, 39, 30));
+        }
+        
+        if(date_naissance.getText().equals(""))
+        {
+            //messageDE.setText("Date naissance is empty !");
+            //messageDE.setTextFill(Color.rgb(210, 39, 30));
+        }
+        
+        if(Addresse.getText().equals(""))
+        {
+            //messageAE.setText("Addresse is empty !");
+            //messageAE.setTextFill(Color.rgb(210, 39, 30));
+        }
+        
+        if(!Matricule_etu.getText().equals(""))
+        {
+            if( duplicateMatricule(connection,Matricule_etu.getText()) )
+            {
+                //messageME.setText("duplicate matricule !");
+                //messageME.setTextFill(Color.rgb(210, 39, 30));
+            }
+           if(!nom_etu.getText().equals(""))
+           {
+                if(!prenom_etu.getText().equals(""))
+                {
+                    if(!date_naissance.getText().equals(""))
+                    {
+                        if(!Addresse.getText().equals(""))
+                        {
+                            String sql = "INSERT INTO etudiant (MATRICULE_ETU,NOM_ETU,PRENOM_ETU,DATE_NAISSANCE,ADDRESSE) VALUES (?,?,?,?,?)";
+                            PreparedStatement ps = (PreparedStatement) connection.prepareStatement(sql);
+                            ps.setString(1, Matricule_etu.getText());
+                            ps.setString(2, nom_etu.getText());
+                            ps.setString(3, prenom_etu.getText());
+                            ps.setString(4, date_naissance.getText());
+                            ps.setString(5, Addresse.getText());
+                            ps.executeUpdate();
+                            //messageR.setText("Etudiant added successfully !");
+                            //messageR.setTextFill(Color.GREEN);
+                        }
+                    }
+                }
+            }
+        }
+                     break;
+                     
+                     
+            default: // some thing...
+                     break;
+        }
+        
     }
     
     public static boolean duplicateMatricule(Connection connection , String matricule ) throws SQLException {
         
-        String sql = "SELECT email FROM users where email = '" + matricule + "'";
+        String sql = "SELECT MATRICULE_ETU FROM etudiant where MATRICULE_ETU = '" + matricule + "'";
         
         com.mysql.jdbc.PreparedStatement preparedStatement = (com.mysql.jdbc.PreparedStatement) connection.prepareStatement(sql);
         ResultSet rs = preparedStatement.executeQuery(sql );

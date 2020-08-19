@@ -145,7 +145,7 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="insert" layoutX="211.0" layoutY="489.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="72.0" text="Insert">
+      <Button fx:id="insert" layoutX="211.0" layoutY="489.0" mnemonicParsing="false" onAction="#AddEtudiant" prefHeight="36.0" prefWidth="72.0" text="Insert">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
