@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javadatabaseselma;
+package selma.java.database;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -21,7 +21,7 @@ import javafx.stage.Stage;
  *
  * @author b
  */
-public class JavaDatabaseSelma extends Application {
+public class SelmaJavaDatabase extends Application {
     
     @Override
     public void start(Stage primaryStage) throws IOException {

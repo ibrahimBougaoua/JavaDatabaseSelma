@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="247.0" prefWidth="422.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion.de.stock.LoginController">
+    <stylesheets>
+        <URL value="@login.css" />
+    </stylesheets>
+   <children>
+      <TextField id="username" fx:id="username" layoutX="70.0" layoutY="47.0" prefHeight="38.0" prefWidth="315.0" />
+      <PasswordField id="password" fx:id="password" layoutX="70.0" layoutY="116.0" prefHeight="38.0" prefWidth="315.0" />
+      <Button fx:id="loginDashoard" layoutX="70.0" layoutY="184.0" mnemonicParsing="false" onAction="#login" prefHeight="38.0" prefWidth="72.0" text="login" />
+      <Label id="messageU" fx:id="messageU" layoutX="70.0" layoutY="93.0" prefHeight="17.0" prefWidth="157.0" />
+      <Label id="messageP" fx:id="messageP" layoutX="71.0" layoutY="161.0" prefHeight="17.0" prefWidth="157.0" />
+      <Label id="messageE" fx:id="messageE" layoutX="181.0" layoutY="183.0" prefHeight="17.0" prefWidth="203.0" />
+   </children>
+</AnchorPane>
