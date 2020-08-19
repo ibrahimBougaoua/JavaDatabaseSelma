@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javadatabaseselma.HomeController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1133.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javadatabaseselma.HomeController">
     <stylesheets>
         <URL value="@home.css" />
     </stylesheets>
@@ -150,10 +150,40 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
-      <Button layoutX="373.0" layoutY="524.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="202.0" text="Return to login page">
+      <Button layoutX="373.0" layoutY="529.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="202.0" text="Return to login page">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
+      <Label layoutX="753.0" layoutY="26.0" text="Consult table :">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <Button layoutX="981.0" layoutY="116.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="88.0" text="Valider">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <RadioButton layoutX="674.0" layoutY="108.0" mnemonicParsing="false" text="Etudiant">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton layoutX="811.0" layoutY="108.0" mnemonicParsing="false" text="EtudiantUnite">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton layoutX="673.0" layoutY="141.0" mnemonicParsing="false" text="Enseignant">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton layoutX="811.0" layoutY="142.0" mnemonicParsing="false" text="Unite">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </RadioButton>
    </children>
 </AnchorPane>
