@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package selma.java.database;
+package javadatabaseselma;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -21,7 +21,7 @@ import com.mysql.jdbc.PreparedStatement;
 public class Database {
     
     private static final Connection con  = null;
-    private static final String database = "selmajavadatabase";
+    private static final String database = "BDDAdmin";
     private static final String username = "root";
     private static final String password = null;
     

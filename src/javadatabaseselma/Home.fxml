@@ -6,19 +6,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="gestion.de.stock.HomeController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="javadatabaseselma.HomeController">
     <stylesheets>
         <URL value="@home.css" />
     </stylesheets>
    <children>
-      <MenuButton mnemonicParsing="false" prefHeight="37.0" prefWidth="92.0" text="Users">
-        <items>
-          <MenuItem fx:id="newuser" mnemonicParsing="false" onAction="#newUser" text="New user" />
-          <MenuItem fx:id="allusers" mnemonicParsing="false" onAction="#allUsers" text="All users" />
-        </items>
-         <font>
-            <Font size="16.0" />
-         </font>
-      </MenuButton>
    </children>
 </AnchorPane>

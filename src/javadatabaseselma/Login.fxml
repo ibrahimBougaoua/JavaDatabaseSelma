@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="247.0" prefWidth="422.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion.de.stock.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="247.0" prefWidth="422.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javadatabaseselma.LoginController">
     <stylesheets>
         <URL value="@login.css" />
     </stylesheets>

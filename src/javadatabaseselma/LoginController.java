@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package selma.java.database;
+package javadatabaseselma;
 
 import com.mysql.jdbc.PreparedStatement;
 import java.io.IOException;
@@ -77,7 +77,7 @@ public class LoginController implements Initializable {
         {
            if(!password.getText().equals(""))
            {
-              if ( username.getText() == "BDDAdmin" &&  password.getText() == "TPAdmin" ) {
+              if ( username.getText().equals("BDDAdmin") &&  password.getText().equals("TPAdmin") ) {
                     Stage dashboardStage = new Stage();
                     Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
                     Scene scene = new Scene(root, 1200, 600);
