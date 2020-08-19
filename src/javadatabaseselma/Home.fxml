@@ -135,7 +135,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="Matricule_Ens_u" layoutX="321.0" layoutY="478.0" text="Matricule_Ens">
+      <Label layoutX="321.0" layoutY="478.0" text="Matricule_Ens">
          <font>
             <Font size="14.0" />
          </font>

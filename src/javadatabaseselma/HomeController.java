@@ -116,6 +116,32 @@ public class HomeController implements Initializable {
     @FXML
     Label messageENP;
     
+    // unit fields
+    
+    @FXML
+    TextField code_unit_u;
+    
+    @FXML
+    Label messageCU;
+    
+    @FXML
+    TextField libelle;
+    
+    @FXML
+    Label messageLB;
+    
+    @FXML
+    TextField nbr_heurs;
+    
+    @FXML
+    Label messageNBR;
+    
+    @FXML
+    TextField Matricule_Ens_u;
+    
+    @FXML
+    Label messageMTESU;
+    
     @FXML
     Button insert;
     
@@ -241,7 +267,7 @@ public class HomeController implements Initializable {
         
         if(!Matricule_etu_unit.getText().equals(""))
         {
-            if( duplicateMatriculeUnit(connection,Matricule_etu_unit.getText()) )
+            if( duplicateMatriculeEtUnit(connection,Matricule_etu_unit.getText()) )
             {
                 //messageME.setText("duplicate matricule !");
                 //messageME.setTextFill(Color.rgb(210, 39, 30));
@@ -323,7 +349,71 @@ public class HomeController implements Initializable {
                 }
             }
         }
-                     break;                      
+                     break;  
+                     
+                     
+
+            case 4:
+        
+        //messageME.setText("");
+        //messageNE.setText("");
+        //messagePE.setText("");
+        //messageDE.setText("");
+        //messageAE.setText("");
+        
+        if(code_unit_u.getText().equals(""))
+        {
+            //messageME.setText("Matricule is empty !");
+            //messageME.setTextFill(Color.rgb(210, 39, 30));
+        }
+        
+        if(libelle.getText().equals(""))
+        {
+            //messageNE.setText("Nom is empty !");
+            //messageNE.setTextFill(Color.rgb(210, 39, 30));
+        }
+        
+        if(nbr_heurs.getText().equals(""))
+        {
+            //messagePE.setText("Prenome is empty !");
+            //messagePE.setTextFill(Color.rgb(210, 39, 30));
+        }
+        
+        if(Matricule_Ens_u.getText().equals(""))
+        {
+            //messageDE.setText("Date naissance is empty !");
+            //messageDE.setTextFill(Color.rgb(210, 39, 30));
+        }
+        
+        if(!code_unit_u.getText().equals(""))
+        {
+            if( duplicateMatriculeCodeUnite(connection,code_unit_u.getText()) )
+            {
+                //messageME.setText("duplicate matricule !");
+                //messageME.setTextFill(Color.rgb(210, 39, 30));
+            }
+           if(!libelle.getText().equals(""))
+           {
+                if(!nbr_heurs.getText().equals(""))
+                {
+                    if(!Matricule_Ens_u.getText().equals(""))
+                    {
+                            String sql = "INSERT INTO unite (CODE_UNITE,LIBELLE,NBR_HEURES,MATRICULE_ENS) VALUES (?,?,?,?)";
+                            PreparedStatement ps = (PreparedStatement) connection.prepareStatement(sql);
+                            ps.setString(1, code_unit_u.getText());
+                            ps.setString(2, libelle.getText());
+                            ps.setInt(3, Integer.parseInt(nbr_heurs.getText()));
+                            ps.setInt(4, Integer.parseInt(Matricule_Ens_u.getText()));
+                            ps.executeUpdate();
+                            //messageR.setText("Etudiant added successfully !");
+                            //messageR.setTextFill(Color.GREEN);
+                    }
+                }
+            }
+        }
+                     break;
+                     
+                     
            default: // some thing...
                      break;
         }
@@ -340,9 +430,19 @@ public class HomeController implements Initializable {
         return rs.next();
     }
     
-    public static boolean duplicateMatriculeUnit(Connection connection , String matricule ) throws SQLException {
+    public static boolean duplicateMatriculeEtUnit(Connection connection , String matricule ) throws SQLException {
         
         String sql = "SELECT MATRICULE_ETU FROM etudiantunite where MATRICULE_ETU = '" + matricule + "'";
+        
+        com.mysql.jdbc.PreparedStatement preparedStatement = (com.mysql.jdbc.PreparedStatement) connection.prepareStatement(sql);
+        ResultSet rs = preparedStatement.executeQuery(sql );
+        
+        return rs.next();
+    }
+    
+    public static boolean duplicateMatriculeCodeUnite(Connection connection , String matricule ) throws SQLException {
+        
+        String sql = "SELECT CODE_UNITE FROM unite where CODE_UNITE  = '" + matricule + "'";
         
         com.mysql.jdbc.PreparedStatement preparedStatement = (com.mysql.jdbc.PreparedStatement) connection.prepareStatement(sql);
         ResultSet rs = preparedStatement.executeQuery(sql );
