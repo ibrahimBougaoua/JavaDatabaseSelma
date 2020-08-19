@@ -96,6 +96,26 @@ public class HomeController implements Initializable {
     @FXML
     Label messageXEU;
     
+    // etudiant unit fields
+    
+    @FXML
+    TextField Matricule_Ens;
+    
+    @FXML
+    Label messageMES;
+    
+    @FXML
+    TextField nom_ens;
+    
+    @FXML
+    Label messageENS;
+    
+    @FXML
+    TextField prenom_ens;
+    
+    @FXML
+    Label messageENP;
+    
     @FXML
     Button insert;
     
@@ -107,7 +127,7 @@ public class HomeController implements Initializable {
         
         Connection connection = Database.getConnectionDb();
         
-        switch (2) {
+        switch (3) {
             case 1:
         
         //messageME.setText("");
@@ -252,8 +272,58 @@ public class HomeController implements Initializable {
                      break;
                      
                      
+
                      
-                      
+                     
+            case 3:
+        
+        //messageME.setText("");
+        //messageNE.setText("");
+        //messagePE.setText("");
+        //messageDE.setText("");
+        //messageAE.setText("");
+        
+        if(Matricule_Ens.getText().equals(""))
+        {
+            //messageME.setText("Matricule is empty !");
+            //messageME.setTextFill(Color.rgb(210, 39, 30));
+        }
+        
+        if(nom_ens.getText().equals(""))
+        {
+            //messageNE.setText("Nom is empty !");
+            //messageNE.setTextFill(Color.rgb(210, 39, 30));
+        }
+        
+        if(prenom_ens.getText().equals(""))
+        {
+            //messagePE.setText("Prenome is empty !");
+            //messagePE.setTextFill(Color.rgb(210, 39, 30));
+        }
+        
+        if(!Matricule_Ens.getText().equals(""))
+        {
+            if( duplicateMatriculeEns(connection,Matricule_Ens.getText()) )
+            {
+                //messageME.setText("duplicate matricule !");
+                //messageME.setTextFill(Color.rgb(210, 39, 30));
+            }
+           if(!nom_ens.getText().equals(""))
+           {
+                if(!prenom_ens.getText().equals(""))
+                {
+                    String sql = "INSERT INTO enseignant (MATRICULE_ENS,NOM_ENS,PRENOM_ENS) VALUES (?,?,?)";
+                    PreparedStatement ps = (PreparedStatement) connection.prepareStatement(sql);
+                    ps.setInt(1, Integer.parseInt(Matricule_Ens.getText()));
+                    ps.setString(2, nom_ens.getText());
+                    ps.setString(3, prenom_ens.getText());
+                    ps.executeUpdate();
+                    //messageR.setText("Etudiant added successfully !");
+                    //messageR.setTextFill(Color.GREEN);
+                }
+            }
+        }
+                     break;                      
            default: // some thing...
                      break;
         }
@@ -273,6 +343,16 @@ public class HomeController implements Initializable {
     public static boolean duplicateMatriculeUnit(Connection connection , String matricule ) throws SQLException {
         
         String sql = "SELECT MATRICULE_ETU FROM etudiantunite where MATRICULE_ETU = '" + matricule + "'";
+        
+        com.mysql.jdbc.PreparedStatement preparedStatement = (com.mysql.jdbc.PreparedStatement) connection.prepareStatement(sql);
+        ResultSet rs = preparedStatement.executeQuery(sql );
+        
+        return rs.next();
+    }
+    
+    public static boolean duplicateMatriculeEns(Connection connection , String matricule ) throws SQLException {
+        
+        String sql = "SELECT MATRICULE_ENS FROM enseignant where MATRICULE_ENS = '" + matricule + "'";
         
         com.mysql.jdbc.PreparedStatement preparedStatement = (com.mysql.jdbc.PreparedStatement) connection.prepareStatement(sql);
         ResultSet rs = preparedStatement.executeQuery(sql );
