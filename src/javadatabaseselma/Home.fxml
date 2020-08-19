@@ -4,6 +4,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -147,7 +149,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="retry" layoutX="33.0" layoutY="489.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="72.0" text="Retry">
+      <Button fx:id="retry" layoutX="33.0" layoutY="489.0" mnemonicParsing="false" onAction="#Retry" prefHeight="36.0" prefWidth="72.0" text="Retry">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -173,7 +175,7 @@
          </font>
       </Button>
       
-      <RadioButton fx:id="cradio1" layoutX="673.0" layoutY="108.0" mnemonicParsing="false" text="Radio d1">
+      <RadioButton fx:id="cradio1" layoutX="673.0" layoutY="108.0" mnemonicParsing="false" text="Etudiant">
                <toggleGroup>
                   <ToggleGroup fx:id="cgroup1" />
                </toggleGroup>
@@ -199,10 +201,18 @@
          </font>
       </RadioButton>
       
-      <Button fx:id="next" layoutX="978.0" layoutY="528.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="88.0" text="Next">
+      <Button fx:id="next" layoutX="980.0" layoutY="528.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="88.0" text="Next">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
+      <TableView layoutX="656.0" layoutY="190.0" prefHeight="315.0" prefWidth="412.0">
+        <columns>
+          <TableColumn prefWidth="117.0" text="Matricule_etu" />
+          <TableColumn prefWidth="74.0" text="Nom" />
+            <TableColumn prefWidth="100.0" text="Prenom" />
+            <TableColumn prefWidth="119.0" text="date_naissance" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>
