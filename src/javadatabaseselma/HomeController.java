@@ -116,52 +116,52 @@ public class HomeController implements Initializable {
         //messageDE.setText("");
         //messageAE.setText("");
         
-        if(Matricule_etu.getText().equals(""))
+        if(Matricule_etu_unit.getText().equals(""))
         {
             //messageME.setText("Matricule is empty !");
             //messageME.setTextFill(Color.rgb(210, 39, 30));
         }
         
-        if(nom_etu.getText().equals(""))
+        if(code_unit.getText().equals(""))
         {
             //messageNE.setText("Nom is empty !");
             //messageNE.setTextFill(Color.rgb(210, 39, 30));
         }
         
-        if(prenom_etu.getText().equals(""))
+        if(note_cc.getText().equals(""))
         {
             //messagePE.setText("Prenome is empty !");
             //messagePE.setTextFill(Color.rgb(210, 39, 30));
         }
         
-        if(date_naissance.getText().equals(""))
+        if(note_tp.getText().equals(""))
         {
             //messageDE.setText("Date naissance is empty !");
             //messageDE.setTextFill(Color.rgb(210, 39, 30));
         }
         
-        if(Addresse.getText().equals(""))
+        if(note_examen.getText().equals(""))
         {
             //messageAE.setText("Addresse is empty !");
             //messageAE.setTextFill(Color.rgb(210, 39, 30));
         }
         
-        if(!Matricule_etu.getText().equals(""))
+        if(!Matricule_etu_unit.getText().equals(""))
         {
-            if( duplicateMatricule(connection,Matricule_etu.getText()) )
+            if( duplicateMatricule(connection,Matricule_etu_unit.getText()) )
             {
                 //messageME.setText("duplicate matricule !");
                 //messageME.setTextFill(Color.rgb(210, 39, 30));
             }
-           if(!nom_etu.getText().equals(""))
+           if(!code_unit.getText().equals(""))
            {
-                if(!prenom_etu.getText().equals(""))
+                if(!note_cc.getText().equals(""))
                 {
-                    if(!date_naissance.getText().equals(""))
+                    if(!note_tp.getText().equals(""))
                     {
-                        if(!Addresse.getText().equals(""))
+                        if(!note_examen.getText().equals(""))
                         {
-                            String sql = "INSERT INTO etudiant (MATRICULE_ETU,NOM_ETU,PRENOM_ETU,DATE_NAISSANCE,ADDRESSE) VALUES (?,?,?,?,?)";
+                            String sql = "INSERT INTO etudiantunite (MATRICULE_ETU,NOM_ETU,PRENOM_ETU,DATE_NAISSANCE,ADDRESSE) VALUES (?,?,?,?,?)";
                             PreparedStatement ps = (PreparedStatement) connection.prepareStatement(sql);
                             ps.setString(1, Matricule_etu.getText());
                             ps.setString(2, nom_etu.getText());
@@ -179,8 +179,7 @@ public class HomeController implements Initializable {
                      break;
                      
                      
-                     
-            case 1:
+            case 2:
         
         //messageME.setText("");
         //messageNE.setText("");
