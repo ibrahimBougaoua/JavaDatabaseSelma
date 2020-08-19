@@ -18,119 +18,119 @@
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <TextField layoutX="136.0" layoutY="135.0" />
-      <TextField layoutX="136.0" layoutY="169.0" />
-      <TextField layoutX="135.0" layoutY="206.0" />
-      <TextField layoutX="136.0" layoutY="243.0" />
-      <TextField layoutX="136.0" layoutY="281.0" />
+      <TextField fx:id="Matricule_etu" layoutX="136.0" layoutY="135.0" />
+      <TextField fx:id="nom_etu" layoutX="136.0" layoutY="169.0" />
+      <TextField fx:id="prenom_etu" layoutX="135.0" layoutY="206.0" />
+      <TextField fx:id="date_naissance" layoutX="136.0" layoutY="243.0" />
+      <TextField fx:id="Addresse" layoutX="136.0" layoutY="281.0" />
       <RadioButton fx:id="insertRadioEt" layoutX="29.0" layoutY="94.0" mnemonicParsing="false" text="Etudiant">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </RadioButton>
-      <Label fx:id="Matricule_etu" layoutX="30.0" layoutY="136.0" text="Matricule_etu">
+      <Label layoutX="30.0" layoutY="136.0" text="Matricule_etu">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="nom_etu" layoutX="31.0" layoutY="171.0" text="Nom">
+      <Label layoutX="31.0" layoutY="171.0" text="Nom">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="prenom_etu" layoutX="32.0" layoutY="206.0" text="Prenom">
+      <Label layoutX="32.0" layoutY="206.0" text="Prenom">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="date_naissance" layoutX="33.0" layoutY="243.0" text="date_naissance">
+      <Label layoutX="33.0" layoutY="243.0" text="date_naissance">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="Addresse" layoutX="34.0" layoutY="280.0" text="Addresse">
+      <Label layoutX="34.0" layoutY="280.0" text="Addresse">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="424.0" layoutY="135.0" />
-      <TextField layoutX="424.0" layoutY="169.0" />
-      <TextField layoutX="423.0" layoutY="206.0" />
-      <TextField layoutX="424.0" layoutY="243.0" />
-      <TextField layoutX="424.0" layoutY="281.0" />
+      <TextField fx:id="Matricule_etu_unit" layoutX="424.0" layoutY="135.0" />
+      <TextField fx:id="code_unit" layoutX="424.0" layoutY="169.0" />
+      <TextField fx:id="note_cc" layoutX="423.0" layoutY="206.0" />
+      <TextField fx:id="note_tp" layoutX="424.0" layoutY="243.0" />
+      <TextField fx:id="note_examen" layoutX="424.0" layoutY="281.0" />
       <RadioButton fx:id="insertRadioEtUnit" layoutX="317.0" layoutY="94.0" mnemonicParsing="false" text="EtudiantUnite">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </RadioButton>
-      <Label fx:id="Matricule_etu_unit" layoutX="318.0" layoutY="136.0" text="Matricule_etu">
+      <Label layoutX="318.0" layoutY="136.0" text="Matricule_etu">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="code_unit" layoutX="319.0" layoutY="171.0" text="Code_Unite">
+      <Label layoutX="319.0" layoutY="171.0" text="Code_Unite">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="note_cc" layoutX="320.0" layoutY="206.0" text="Note_CC">
+      <Label layoutX="320.0" layoutY="206.0" text="Note_CC">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="note_tp" layoutX="321.0" layoutY="243.0" text="Note_TP">
+      <Label layoutX="321.0" layoutY="243.0" text="Note_TP">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="note_examen" layoutX="322.0" layoutY="282.0" text="Note_Examen">
+      <Label layoutX="322.0" layoutY="282.0" text="Note_Examen">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="136.0" layoutY="370.0" />
-      <TextField layoutX="136.0" layoutY="404.0" />
-      <TextField layoutX="135.0" layoutY="441.0" />
+      <TextField fx:id="Matricule_Ens" layoutX="136.0" layoutY="370.0" />
+      <TextField fx:id="nom_ens" layoutX="136.0" layoutY="404.0" />
+      <TextField fx:id="prenom_ens" layoutX="135.0" layoutY="441.0" />
       <RadioButton fx:id="insertRadioEs" layoutX="29.0" layoutY="329.0" mnemonicParsing="false" text="Enseignant">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </RadioButton>
-      <Label fx:id="Matricule_Ens" layoutX="30.0" layoutY="371.0" text="Matricule_Ens">
+      <Label layoutX="30.0" layoutY="371.0" text="Matricule_Ens">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="nom_ens" layoutX="31.0" layoutY="406.0" text="Nom">
+      <Label layoutX="31.0" layoutY="406.0" text="Nom">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="prenom_ens" layoutX="32.0" layoutY="441.0" text="Prenom">
+      <Label layoutX="32.0" layoutY="441.0" text="Prenom">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="424.0" layoutY="370.0" />
-      <TextField layoutX="424.0" layoutY="404.0" />
-      <TextField layoutX="423.0" layoutY="441.0" />
-      <TextField layoutX="424.0" layoutY="478.0" />
+      <TextField fx:id="code_unit_u" layoutX="424.0" layoutY="370.0" />
+      <TextField fx:id="libelle" layoutX="424.0" layoutY="404.0" />
+      <TextField fx:id="nbr_heurs" layoutX="423.0" layoutY="441.0" />
+      <TextField fx:id="Matricule_Ens_u" layoutX="424.0" layoutY="478.0" />
       <RadioButton fx:id="insertRadioUnite" layoutX="317.0" layoutY="329.0" mnemonicParsing="false" text="Unite">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </RadioButton>
-      <Label fx:id="code_unit_u" layoutX="318.0" layoutY="371.0" text="Code_Unite">
+      <Label layoutX="318.0" layoutY="371.0" text="Code_Unite">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="libelle" layoutX="319.0" layoutY="406.0" text="Libelle">
+      <Label layoutX="319.0" layoutY="406.0" text="Libelle">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="nbr_heurs" layoutX="320.0" layoutY="441.0" text="Nbr_Heurs">
+      <Label layoutX="320.0" layoutY="441.0" text="Nbr_Heurs">
          <font>
             <Font size="14.0" />
          </font>
