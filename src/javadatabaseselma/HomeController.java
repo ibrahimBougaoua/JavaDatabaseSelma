@@ -106,42 +106,24 @@ public class HomeController implements Initializable {
         
         if(!Matricule_etu.getText().equals(""))
         {
-           if(!lastname.getText().equals(""))
+            if( duplicateMatricule(connection,Matricule_etu.getText()) )
+            {
+                messageME.setText("duplicate matricule !");
+                messageME.setTextFill(Color.rgb(210, 39, 30));
+            }
+           if(!nom_etu.getText().equals(""))
            {
-                if(!username.getText().equals(""))
+                if(!prenom_etu.getText().equals(""))
                 {
-                    if(!email.getText().equals(""))
+                    if(!date_naissance.getText().equals(""))
                     {
-                        if( duplicateEmail(connection,email.getText()) )
+                        if(!Addresse.getText().equals(""))
                         {
-                            messageE.setText("duplicate email !");
-                            messageE.setTextFill(Color.rgb(210, 39, 30));
-                        }
-                        if(!password.getText().equals(""))
-                        {
-                            if(!confirmepassword.getText().equals(""))
-                            {
-                                if(!confirmepassword.getText().equals(password.getText()))
-                                {
-                                    messageC.setText("password not match with the first one !");
-                                    messageC.setTextFill(Color.rgb(210, 39, 30));
-                                }
-                                if(!telephone.getText().equals(""))
-                                {
-                                    if( duplicateTelephone(connection,telephone.getText()) )
-                                    {
-                                        messageT.setText("duplicate telephone !");
-                                        messageT.setTextFill(Color.rgb(210, 39, 30));
-                                    }
-                                    if(!choiceBox.getValue().equals(""))
-                                    {
-                                    gender.setText(choiceBox.getValue().toString());
-                                         if ( ! duplicateEmail(connection,email.getText()) && ! duplicateTelephone(connection,telephone.getText()) ) {
                                              
-                                           String sql = "INSERT INTO users (firstname,lastname,username,email,password,telephone,gender) VALUES (?,?,?,?,?,?,?)";
-                                           PreparedStatement ps = (PreparedStatement) connection.prepareStatement(sql);
-                                           ps.setString(1, firstname.getText());
-                                           ps.setString(2, lastname.getText());
+                            String sql = "INSERT INTO users (firstname,lastname,username,email,password,telephone,gender) VALUES (?,?,?,?,?,?,?)";
+                            PreparedStatement ps = (PreparedStatement) connection.prepareStatement(sql);
+                            ps.setString(1, firstname.getText());
+                            ps.setString(2, lastname.getText());
                                            ps.setString(3, username.getText());
                                            ps.setString(4, email.getText());
                                            ps.setString(5, password.getText());
