@@ -180,7 +180,23 @@ public class HomeController implements Initializable {
 
     @FXML
     public void Retry(ActionEvent e) throws SQLException {
-    
+    Matricule_etu.setText("");
+    nom_etu.setText("");
+    prenom_etu.setText("");
+    date_naissance.setText("");
+    Addresse.setText("");
+    Matricule_etu_unit.setText("");
+    code_unit.setText("");
+    note_cc.setText("");
+    note_tp.setText("");
+    note_examen.setText("");
+    Matricule_Ens.setText("");
+    nom_ens.setText("");
+    prenom_ens.setText("");
+    code_unit_u.setText("");
+    libelle.setText("");
+    nbr_heurs.setText("");
+    Matricule_Ens_u.setText("");
     }
     
     @FXML
