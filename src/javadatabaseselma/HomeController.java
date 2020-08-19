@@ -20,7 +20,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -147,14 +149,49 @@ public class HomeController implements Initializable {
     
     @FXML
     Label messageR;
-            
+    
+    @FXML
+    RadioButton radio1;
+    
+    @FXML
+    RadioButton radio2;
+   
+    @FXML
+    RadioButton radio3;
+    
+    @FXML
+    RadioButton radio4;
+    
+    ToggleGroup group1;
+    
+    @FXML
+    RadioButton cradio1;
+    
+    @FXML
+    RadioButton cradio2;
+   
+    @FXML
+    RadioButton cradio3;
+    
+    @FXML
+    RadioButton cradio4;
+    
+    ToggleGroup cgroup1;
+
+    @FXML
+    public void Retry(ActionEvent e) throws SQLException {
+    
+    }
+    
     @FXML
     public void AddEtudiant(ActionEvent e) throws SQLException {
         
         Connection connection = Database.getConnectionDb();
         
-        switch (4) {
-            case 1:
+        String selected = ((RadioButton) group1.getSelectedToggle()).getText();
+
+        switch (selected) {
+            case "one":
         
         //messageME.setText("");
         //messageNE.setText("");
@@ -227,7 +264,7 @@ public class HomeController implements Initializable {
                      
                      
                      
-            case 2:
+            case "tow":
         
         //messageME.setText("");
         //messageNE.setText("");
@@ -301,7 +338,7 @@ public class HomeController implements Initializable {
 
                      
                      
-            case 3:
+            case "three":
         
         //messageME.setText("");
         //messageNE.setText("");
@@ -353,7 +390,7 @@ public class HomeController implements Initializable {
                      
                      
 
-            case 4:
+            case "four":
         
         //messageME.setText("");
         //messageNE.setText("");
@@ -466,6 +503,25 @@ public class HomeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        group1 = new ToggleGroup();
+        radio1.setText("one");
+        radio2.setText("tow");
+        radio3.setText("three");
+        radio4.setText("four");
+        radio1.setToggleGroup(group1);
+        radio2.setToggleGroup(group1);
+        radio3.setToggleGroup(group1);
+        radio4.setToggleGroup(group1);
+        
+        cgroup1 = new ToggleGroup();
+        cradio1.setText("one");
+        cradio2.setText("tow");
+        cradio3.setText("three");
+        cradio4.setText("four");
+        cradio1.setToggleGroup(cgroup1);
+        cradio2.setToggleGroup(cgroup1);
+        cradio3.setToggleGroup(cgroup1);
+        cradio4.setToggleGroup(cgroup1);
     }    
     
 }

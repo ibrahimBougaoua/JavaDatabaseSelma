@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -13,6 +14,8 @@
         <URL value="@home.css" />
     </stylesheets>
    <children>
+       
+       
       <Label layoutX="29.0" layoutY="25.0" text="Insert Into Table :">
          <font>
             <Font name="System Bold" size="30.0" />
@@ -23,7 +26,11 @@
       <TextField fx:id="prenom_etu" layoutX="135.0" layoutY="206.0" />
       <TextField fx:id="date_naissance" layoutX="136.0" layoutY="243.0" />
       <TextField fx:id="Addresse" layoutX="136.0" layoutY="281.0" />
-      <RadioButton fx:id="insertRadioEt" layoutX="29.0" layoutY="94.0" mnemonicParsing="false" text="Etudiant">
+      
+      <RadioButton fx:id="radio1" layoutX="29.0" layoutY="94.0" mnemonicParsing="false" text="Etudiant">
+               <toggleGroup>
+                  <ToggleGroup fx:id="group1" />
+               </toggleGroup>
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -58,7 +65,7 @@
       <TextField fx:id="note_cc" layoutX="423.0" layoutY="206.0" />
       <TextField fx:id="note_tp" layoutX="424.0" layoutY="243.0" />
       <TextField fx:id="note_examen" layoutX="424.0" layoutY="281.0" />
-      <RadioButton fx:id="insertRadioEtUnit" layoutX="317.0" layoutY="94.0" mnemonicParsing="false" text="EtudiantUnite">
+      <RadioButton fx:id="radio2" layoutX="317.0" layoutY="94.0" mnemonicParsing="false" text="EtudiantUnite">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -91,7 +98,7 @@
       <TextField fx:id="Matricule_Ens" layoutX="136.0" layoutY="370.0" />
       <TextField fx:id="nom_ens" layoutX="136.0" layoutY="404.0" />
       <TextField fx:id="prenom_ens" layoutX="135.0" layoutY="441.0" />
-      <RadioButton fx:id="insertRadioEs" layoutX="29.0" layoutY="329.0" mnemonicParsing="false" text="Enseignant">
+      <RadioButton fx:id="radio3" layoutX="29.0" layoutY="329.0" mnemonicParsing="false" text="Enseignant">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -115,7 +122,7 @@
       <TextField fx:id="libelle" layoutX="424.0" layoutY="404.0" />
       <TextField fx:id="nbr_heurs" layoutX="423.0" layoutY="441.0" />
       <TextField fx:id="Matricule_Ens_u" layoutX="424.0" layoutY="478.0" />
-      <RadioButton fx:id="insertRadioUnite" layoutX="317.0" layoutY="329.0" mnemonicParsing="false" text="Unite">
+      <RadioButton fx:id="radio4" layoutX="317.0" layoutY="329.0" mnemonicParsing="false" text="Unite">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -165,26 +172,33 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
-      <RadioButton fx:id="ConsultRadioEt" layoutX="674.0" layoutY="108.0" mnemonicParsing="false" text="Etudiant">
+      
+      <RadioButton fx:id="cradio1" layoutX="673.0" layoutY="108.0" mnemonicParsing="false" text="Radio d1">
+               <toggleGroup>
+                  <ToggleGroup fx:id="cgroup1" />
+               </toggleGroup>
+               
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="ConsultRadioEtUnit" layoutX="811.0" layoutY="108.0" mnemonicParsing="false" text="EtudiantUnite">
+      
+      <RadioButton fx:id="cradio2" layoutX="811.0" layoutY="108.0" mnemonicParsing="false" text="EtudiantUnite" toggleGroup="$cgroup1">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="ConsultRadioEns" layoutX="673.0" layoutY="141.0" mnemonicParsing="false" text="Enseignant">
+      <RadioButton fx:id="cradio3" layoutX="673.0" layoutY="141.0" mnemonicParsing="false" text="Enseignant" toggleGroup="$cgroup1">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="ConsultRadioUnit" layoutX="811.0" layoutY="142.0" mnemonicParsing="false" text="Unite">
+      <RadioButton fx:id="cradio4" layoutX="811.0" layoutY="142.0" mnemonicParsing="false" text="Unite" toggleGroup="$cgroup1">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </RadioButton>
+      
       <Button fx:id="next" layoutX="978.0" layoutY="528.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="88.0" text="Next">
          <font>
             <Font name="System Bold" size="16.0" />
