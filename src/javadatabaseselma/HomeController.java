@@ -21,6 +21,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.paint.Color;
@@ -178,6 +180,23 @@ public class HomeController implements Initializable {
     
     ToggleGroup cgroup1;
 
+    @FXML
+    private TableView<Etudiant> etudiantTable;
+    
+    @FXML
+    public TableColumn<Etudiant, Integer> etudiantMat;
+
+    @FXML
+    public TableColumn<Etudiant, String> etudiantNom;
+
+    @FXML
+    public TableColumn<Etudiant, String> etudiantPrenom;
+    
+    @FXML
+    public TableColumn<Etudiant, String> etudiantDn;
+    
+    
+    
     @FXML
     public void Retry(ActionEvent e) throws SQLException {
     Matricule_etu.setText("");
