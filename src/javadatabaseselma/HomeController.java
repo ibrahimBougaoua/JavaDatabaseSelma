@@ -236,11 +236,11 @@ public class HomeController implements Initializable {
                         {
                             String sql = "INSERT INTO etudiantunite (MATRICULE_ETU,CODE_UNITE,NOTE_CC,NOTE_TP,NOTE_EXAMEN) VALUES (?,?,?,?,?)";
                             PreparedStatement ps = (PreparedStatement) connection.prepareStatement(sql);
-                            ps.setString(1, Matricule_etu_unit.getText());
+                            ps.setInt(1, Integer.parseInt(Matricule_etu_unit.getText()));
                             ps.setString(2, code_unit.getText());
-                            ps.setString(3, note_cc.getText());
-                            ps.setString(4, note_tp.getText());
-                            ps.setString(5, note_examen.getText());
+                            ps.setInt(3, Integer.parseInt(note_cc.getText()));
+                            ps.setInt(4, Integer.parseInt(note_tp.getText()));
+                            ps.setInt(5, Integer.parseInt(note_examen.getText()));
                             ps.executeUpdate();
                             //messageR.setText("Etudiant added successfully !");
                             //messageR.setTextFill(Color.GREEN);
