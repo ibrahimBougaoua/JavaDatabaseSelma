@@ -13,6 +13,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.SceneAntialiasing;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -28,7 +29,9 @@ public class JavaDatabaseSelma extends Application {
 
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
       
-        Scene scene = new Scene(root, 450, 300);
+        //Scene scene = new Scene(root, 450, 300);
+        Scene scene = new Scene(root, -1, -1, true, SceneAntialiasing.BALANCED);
+
         scene.getStylesheets().add(getClass().getResource("login.css").toExternalForm());
         primaryStage.setTitle("Login");
         primaryStage.setScene(scene);
