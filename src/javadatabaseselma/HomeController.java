@@ -709,6 +709,37 @@ public class HomeController implements Initializable {
         enseignant.setItems(etudiantData);
         
         
+        
+        
+        //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
+        uniteCu.setCellValueFactory(new PropertyValueFactory<>("CODE_UNITE"));
+        uniteLb.setCellValueFactory(new PropertyValueFactory<>("LIBELLE"));
+        uniteNh.setCellValueFactory(new PropertyValueFactory<>("NBR_HEURES"));
+        uniteMe.setCellValueFactory(new PropertyValueFactory<>("MATRICULE_ENS"));
+        
+        uniteData = FXCollections.observableArrayList();    
+    
+        try {
+        
+        connection = Database.getConnectionDb();
+            
+        String sql = "SELECT * FROM unite";
+        
+        PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
+        ResultSet rs = preparedStatement.executeQuery(sql );
+        
+        while (rs.next()) {	
+                uniteData.add(new Unite(rs.getString("CODE_UNITE"),rs.getString("LIBELLE"),rs.getInt("NBR_HEURES"),rs.getInt("MATRICULE_ENS")));
+        }
+        
+        } catch (SQLException ex) {
+            Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                
+        unite.setItems(uniteData);
+        
+        
+        
     } 
     
 
