@@ -80,13 +80,21 @@ public class LoginController implements Initializable {
            if(!password.getText().equals(""))
            {
               if ( username.getText().equals("BDDAdmin") &&  password.getText().equals("TPAdmin") ) {
-                    Stage dashboardStage = new Stage();
+                    Stage HomeStage = new Stage();
                     Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
                     Scene scene = new Scene(root, 1200, 600);
                     scene.getStylesheets().add(getClass().getResource("home.css").toExternalForm());
-                    dashboardStage.setTitle("Home");
-                    dashboardStage.setScene(scene);
-                    dashboardStage.show();
+                    HomeStage.setTitle("Home");
+                    HomeStage.setScene(scene);
+                    HomeStage.show();
+              } else if ( username.getText().equals("Etudiant") &&  password.getText().equals("TPEtudiant") ) {
+                    Stage EtudiantStage = new Stage();
+                    Parent root = FXMLLoader.load(getClass().getResource("Etudiant.fxml"));
+                    Scene scene = new Scene(root, 1200, 600);
+                    scene.getStylesheets().add(getClass().getResource("Etudiant.css").toExternalForm());
+                    EtudiantStage.setTitle("Etudiant");
+                    EtudiantStage.setScene(scene);
+                    EtudiantStage.show();
               } else {
                     messageE.setText("username or password is incorrect !");
                     messageE.setTextFill(Color.rgb(210, 39, 30));
