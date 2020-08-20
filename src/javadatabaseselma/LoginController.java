@@ -101,7 +101,8 @@ public class LoginController implements Initializable {
               } else if ( username.getText().equals("a") &&  password.getText().equals("a") ) {
                     Stage EtudiantStage = new Stage();
                     Parent root = FXMLLoader.load(getClass().getResource("Enseignant.fxml"));
-                    Scene scene = new Scene(root, 1200, 600);
+                    //Scene scene = new Scene(root, 1200, 600);
+                    Scene scene = new Scene(root, -1, -1, true, SceneAntialiasing.BALANCED);
                     scene.getStylesheets().add(getClass().getResource("Enseignant.css").toExternalForm());
                     EtudiantStage.setTitle("Enseignant");
                     EtudiantStage.setScene(scene);
