@@ -243,11 +243,11 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView prefHeight="384.0" prefWidth="463.0">
+                        <TableView fx:id="enseignant" prefHeight="384.0" prefWidth="463.0">
                           <columns>
-                            <TableColumn prefWidth="186.0" text="Matricule_Ens" />
-                            <TableColumn minWidth="0.0" prefWidth="93.0" text="Nom" />
-                              <TableColumn minWidth="3.0" prefWidth="183.0" text="Prenom" />
+                            <TableColumn fx:id="enseignantMatTable" prefWidth="186.0" text="Matricule_Ens" />
+                            <TableColumn fx:id="enseignantNomTable" minWidth="0.0" prefWidth="93.0" text="Nom" />
+                            <TableColumn fx:id="enseignantPrenomTable" minWidth="3.0" prefWidth="183.0" text="Prenom" />
                           </columns>
                         </TableView>
                      </children>
