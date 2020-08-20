@@ -14,4 +14,20 @@ import javafx.beans.property.SimpleStringProperty;
  */
 public class Enseignant {
     
+    private SimpleIntegerProperty MATRICULE_ENS;
+    private SimpleStringProperty NOM_ENS;
+    private SimpleStringProperty PRENOM_ENS;
+    
+    public Enseignant()
+    {
+        
+    }
+    
+    public Enseignant(int MATRICULE_ENS,String NOM_ENS,String PRENOM_ENS)
+    {
+        this.MATRICULE_ENS = new SimpleIntegerProperty(MATRICULE_ENS);
+        this.NOM_ENS = new SimpleStringProperty(NOM_ENS);
+        this.PRENOM_ENS = new SimpleStringProperty(PRENOM_ENS);;
+    }
+
 }
