@@ -47,6 +47,7 @@ public class HomeController implements Initializable {
     private ObservableList<Etudiant> data;
     private ObservableList<EtudiantUnite> etudiantUnitData;
     private ObservableList<Enseignant> etudiantData;
+    private ObservableList<Unite> uniteData;
 
     // etudiant fields
     
@@ -244,6 +245,23 @@ public class HomeController implements Initializable {
     
     @FXML
     TableColumn<EtudiantUnite, String> enseignantPrenomTable;
+    
+    // using for enseignant
+    
+    @FXML
+    TableView<Unite> unite;
+    
+    @FXML
+    TableColumn<Unite, String> uniteCu;
+    
+    @FXML
+    TableColumn<Unite, String> uniteLb;   
+    
+    @FXML
+    TableColumn<Unite, Integer> uniteNh;
+    
+    @FXML
+    TableColumn<Unite, Integer> uniteMe;
     
     @FXML
     public void Retry(ActionEvent e) throws SQLException {
