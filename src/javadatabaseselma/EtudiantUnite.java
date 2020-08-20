@@ -15,9 +15,23 @@ import javafx.beans.property.SimpleStringProperty;
 public class EtudiantUnite {
     
     private SimpleIntegerProperty MATRICULE_ETU;
-    private SimpleStringProperty  NOM_ETU;
-    private SimpleStringProperty  PRENOM_ETU;
-    private SimpleStringProperty  DATE_NAISSANCE;
-    private SimpleStringProperty  ADDRESSE;
+    private SimpleStringProperty CODE_UNITE;
+    private SimpleIntegerProperty NOTE_CC;
+    private SimpleIntegerProperty NOTE_TP;
+    private SimpleIntegerProperty NOTE_EXAMEN;
+    
+    public EtudiantUnite()
+    {
+        
+    }
+    
+    public EtudiantUnite(int MATRICULE_ETU,String CODE_UNITE,int NOTE_CC,int NOTE_TP,int NOTE_EXAMEN)
+    {
+        this.MATRICULE_ETU = new SimpleIntegerProperty(MATRICULE_ETU);
+        this.CODE_UNITE = new SimpleStringProperty(CODE_UNITE);
+        this.NOTE_CC = new SimpleIntegerProperty(NOTE_CC);
+        this.NOTE_TP = new SimpleIntegerProperty(NOTE_TP);
+        this.NOTE_EXAMEN = new SimpleIntegerProperty(NOTE_EXAMEN);
+    }
     
 }
