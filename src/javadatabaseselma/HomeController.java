@@ -46,6 +46,7 @@ public class HomeController implements Initializable {
 
     private ObservableList<Etudiant> data;
     private ObservableList<EtudiantUnite> etudiantUnitData;
+    private ObservableList<Enseignant> etudiantData;
 
     // etudiant fields
     
@@ -230,6 +231,20 @@ public class HomeController implements Initializable {
     @FXML
     TableColumn<EtudiantUnite, Integer> etudiantUnitNoteExamen;
 
+    // using for enseignant
+    
+    @FXML
+    TableView<Enseignant> enseignant;
+    
+    @FXML
+    TableColumn<Enseignant, Integer> enseignantMatTable;
+    
+    @FXML
+    TableColumn<Enseignant, String> enseignantNomTable;   
+    
+    @FXML
+    TableColumn<EtudiantUnite, String> enseignantPrenomTable;
+    
     @FXML
     public void Retry(ActionEvent e) throws SQLException {
     Matricule_etu.setText("");
@@ -619,9 +634,7 @@ public class HomeController implements Initializable {
         }
                 
         etudiantTable.setItems(data);
-        
-        
-        
+         
         //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
         etudiantUnitMatEtu.setCellValueFactory(new PropertyValueFactory<>("MATRICULE_ETU"));
         etudiantUnitCode.setCellValueFactory(new PropertyValueFactory<>("CODE_UNITE"));
@@ -649,6 +662,33 @@ public class HomeController implements Initializable {
         }
                 
         etudiantUnit.setItems(etudiantUnitData);
+        
+        
+        //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
+        enseignantMatTable.setCellValueFactory(new PropertyValueFactory<>("MATRICULE_ENS"));
+        enseignantNomTable.setCellValueFactory(new PropertyValueFactory<>("NOM_ENS"));
+        enseignantPrenomTable.setCellValueFactory(new PropertyValueFactory<>("PRENOM_ENS"));
+        
+        etudiantData = FXCollections.observableArrayList();    
+    
+        try {
+        
+        connection = Database.getConnectionDb();
+            
+        String sql = "SELECT * FROM enseignant";
+        
+        PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
+        ResultSet rs = preparedStatement.executeQuery(sql );
+        
+        while (rs.next()) {	
+                etudiantData.add(new Enseignant(rs.getInt("MATRICULE_ENS"),rs.getString("NOM_ENS"),rs.getString("PRENOM_ENS")));
+        }
+        
+        } catch (SQLException ex) {
+            Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                
+        enseignant.setItems(etudiantData);
         
         
     } 
