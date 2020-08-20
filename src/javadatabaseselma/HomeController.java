@@ -260,6 +260,12 @@ public class HomeController implements Initializable {
     
     @FXML
     public void Retry(ActionEvent e) throws SQLException {
+        
+    a1.setStyle("-fx-background-color: #fff;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
+    a2.setStyle("-fx-background-color: #fff;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
+    a3.setStyle("-fx-background-color: #fff;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
+    a4.setStyle("-fx-background-color: #fff;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
+         
     Matricule_etu.setText("");
     nom_etu.setText("");
     prenom_etu.setText("");
@@ -300,18 +306,23 @@ public class HomeController implements Initializable {
         
         String selected = ((RadioButton) group1.getSelectedToggle()).getText();
         
+        a1.setStyle("-fx-background-color: #fff;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
+        a2.setStyle("-fx-background-color: #fff;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
+        a3.setStyle("-fx-background-color: #fff;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
+        a4.setStyle("-fx-background-color: #fff;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
+         
         if(selected.equals("one"))
         {
-            a1.setStyle("-fx-border-color: #17a2b8; -fx-border-width: 1px 1px 1px 0px");
+            a1.setStyle("-fx-background-color: #17a2b8;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
         } else if(selected.equals("tow"))
         {
-            a2.setStyle("-fx-border-color: #17a2b8; -fx-border-width: 1px 1px 1px 0px");
+            a2.setStyle("-fx-background-color: #17a2b8;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
         } else if(selected.equals("three"))
         {
-            a3.setStyle("-fx-border-color: #17a2b8; -fx-border-width: 1px 1px 1px 0px");
+            a3.setStyle("-fx-background-color: #17a2b8;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
         } else if(selected.equals("four"))
         {
-            a4.setStyle("-fx-border-color: #17a2b8; -fx-border-width: 1px 1px 1px 0px");
+            a4.setStyle("-fx-background-color: #17a2b8;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
         }
         
         
