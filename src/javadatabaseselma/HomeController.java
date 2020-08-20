@@ -25,8 +25,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javadatabaseselma.Etudiant;
+
 
 /**
  * FXML Controller class
@@ -181,21 +186,22 @@ public class HomeController implements Initializable {
     ToggleGroup cgroup1;
 
     @FXML
-    private TableView<Etudiant> etudiantTable;
+    TableView<Etudiant> etudiantTable;
     
     @FXML
-    public TableColumn<Etudiant, Integer> etudiantMat;
+    TableColumn<Etudiant, Integer> etudiantMat;
 
     @FXML
-    public TableColumn<Etudiant, String> etudiantNom;
+    TableColumn<Etudiant, String> etudiantNom;
 
     @FXML
-    public TableColumn<Etudiant, String> etudiantPrenom;
+    TableColumn<Etudiant, String> etudiantPrenom;
     
     @FXML
-    public TableColumn<Etudiant, String> etudiantDn;
+    TableColumn<Etudiant, String> etudiantDn;   
     
-    
+    @FXML
+    TableColumn<Etudiant, String> etudiantAd;
     
     @FXML
     public void Retry(ActionEvent e) throws SQLException {
@@ -557,6 +563,25 @@ public class HomeController implements Initializable {
         cradio2.setToggleGroup(cgroup1);
         cradio3.setToggleGroup(cgroup1);
         cradio4.setToggleGroup(cgroup1);
-    }    
+        
+        //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
+        etudiantMat.setCellValueFactory(new PropertyValueFactory<>("MATRICULE_ETU"));
+        etudiantNom.setCellValueFactory(new PropertyValueFactory<>("NOM_ETU"));
+        etudiantPrenom.setCellValueFactory(new PropertyValueFactory<>("PRENOM_ETU"));
+        etudiantDn.setCellValueFactory(new PropertyValueFactory<>("DATE_NAISSANCE"));
+        etudiantAd.setCellValueFactory(new PropertyValueFactory<>("ADDRESSE"));
+                
+        //add your data to the table here.
+        etudiantTable.setItems(etudiant);
+        
+    } 
+    
+    // add your data here from any source 
+    private ObservableList<Etudiant> etudiant = FXCollections.observableArrayList(
+            new Etudiant(1,"Amos", "Chepchieng", "Chepchieng", "Chepchieng")
+    );
+
+    
+    
     
 }

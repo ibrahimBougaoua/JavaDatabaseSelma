@@ -206,12 +206,13 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
-      <TableView fx:id="etudiantTable" layoutX="656.0" layoutY="190.0" prefHeight="315.0" prefWidth="412.0">
+      <TableView fx:id="etudiantTable" layoutX="623.0" layoutY="190.0" prefHeight="315.0" prefWidth="446.0">
         <columns>
-          <TableColumn fx:id="etudiantMat" prefWidth="117.0" text="Matricule_etu" />
-          <TableColumn fx:id="etudiantNom" prefWidth="74.0" text="Nom" />
-          <TableColumn fx:id="etudiantPrenom" prefWidth="100.0" text="Prenom" />
-          <TableColumn fx:id="etudiantDn" prefWidth="119.0" text="date_naissance" />
+          <TableColumn fx:id="etudiantMat" prefWidth="102.0" text="Matricule_etu" />
+          <TableColumn fx:id="etudiantNom" prefWidth="62.0" text="Nom" />
+          <TableColumn fx:id="etudiantPrenom" prefWidth="81.0" text="Prenom" />
+          <TableColumn fx:id="etudiantDn" prefWidth="93.0" text="date_naissance" />
+          <TableColumn fx:id="etudiantAd" prefWidth="109.0" text="Address" />
         </columns>
       </TableView>
    </children>

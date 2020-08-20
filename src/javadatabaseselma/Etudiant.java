@@ -37,8 +37,8 @@ public class Etudiant {
     /**
      * @return the MATRICULE_ETU
      */
-    public SimpleIntegerProperty getMATRICULE_ETU() {
-        return MATRICULE_ETU;
+    public int getMATRICULE_ETU() {
+        return MATRICULE_ETU.get();
     }
 
     /**
@@ -51,8 +51,8 @@ public class Etudiant {
     /**
      * @return the NOM_ETU
      */
-    public SimpleStringProperty getNOM_ETU() {
-        return NOM_ETU;
+    public String getNOM_ETU() {
+        return NOM_ETU.get();
     }
 
     /**
@@ -65,8 +65,8 @@ public class Etudiant {
     /**
      * @return the PRENOM_ETU
      */
-    public SimpleStringProperty getPRENOM_ETU() {
-        return PRENOM_ETU;
+    public String getPRENOM_ETU() {
+        return PRENOM_ETU.get();
     }
 
     /**
@@ -79,8 +79,8 @@ public class Etudiant {
     /**
      * @return the DATE_NAISSANCE
      */
-    public SimpleStringProperty getDATE_NAISSANCE() {
-        return DATE_NAISSANCE;
+    public String getDATE_NAISSANCE() {
+        return DATE_NAISSANCE.get();
     }
 
     /**
@@ -93,8 +93,8 @@ public class Etudiant {
     /**
      * @return the ADDRESSE
      */
-    public SimpleStringProperty getADDRESSE() {
-        return ADDRESSE;
+    public String getADDRESSE() {
+        return ADDRESSE.get();
     }
 
     /**
