@@ -31,5 +31,61 @@ public class Unite {
         this.NBR_HEURES = new SimpleIntegerProperty(NBR_HEURES);
         this.MATRICULE_ENS  = new SimpleIntegerProperty(MATRICULE_ENS );
     }
+
+    /**
+     * @return the CODE_UNITE
+     */
+    public SimpleStringProperty getCODE_UNITE() {
+        return CODE_UNITE;
+    }
+
+    /**
+     * @param CODE_UNITE the CODE_UNITE to set
+     */
+    public void setCODE_UNITE(SimpleStringProperty CODE_UNITE) {
+        this.CODE_UNITE = CODE_UNITE;
+    }
+
+    /**
+     * @return the LIBELLE
+     */
+    public SimpleStringProperty getLIBELLE() {
+        return LIBELLE;
+    }
+
+    /**
+     * @param LIBELLE the LIBELLE to set
+     */
+    public void setLIBELLE(SimpleStringProperty LIBELLE) {
+        this.LIBELLE = LIBELLE;
+    }
+
+    /**
+     * @return the NBR_HEURES
+     */
+    public SimpleIntegerProperty getNBR_HEURES() {
+        return NBR_HEURES;
+    }
+
+    /**
+     * @param NBR_HEURES the NBR_HEURES to set
+     */
+    public void setNBR_HEURES(SimpleIntegerProperty NBR_HEURES) {
+        this.NBR_HEURES = NBR_HEURES;
+    }
+
+    /**
+     * @return the MATRICULE_ENS
+     */
+    public SimpleIntegerProperty getMATRICULE_ENS() {
+        return MATRICULE_ENS;
+    }
+
+    /**
+     * @param MATRICULE_ENS the MATRICULE_ENS to set
+     */
+    public void setMATRICULE_ENS(SimpleIntegerProperty MATRICULE_ENS) {
+        this.MATRICULE_ENS = MATRICULE_ENS;
+    }
     
 }
