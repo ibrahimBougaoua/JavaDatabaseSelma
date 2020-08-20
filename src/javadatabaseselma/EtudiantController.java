@@ -89,11 +89,15 @@ public class EtudiantController implements Initializable {
            getDn.setText(rs.getString("DATE_NAISSANCE").toString());
         }
         } else {
+            getMatricule.setText("");
+            getNom.setText(""); 
+            getPrenom.setText("");
+            getDn.setText("");
             errorValider.setText("Votre Matricule est faux ou n'existe pas");
             errorValider.setTextFill(Color.rgb(210, 39, 30));
         }
         
-        if(getMatriculeField.getText().equals(""))
+        if(getMatricule.getText().equals(""))
         {
             errorValider.setText("Votre Matricule est faux ou n'existe pas");
             errorValider.setTextFill(Color.rgb(210, 39, 30));
