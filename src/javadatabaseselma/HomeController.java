@@ -11,7 +11,11 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,7 +44,8 @@ import javadatabaseselma.Etudiant;
  */
 public class HomeController implements Initializable {
 
-    
+    private ObservableList<Etudiant> data;
+
     // etudiant fields
     
     @FXML
@@ -570,18 +575,36 @@ public class HomeController implements Initializable {
         etudiantPrenom.setCellValueFactory(new PropertyValueFactory<>("PRENOM_ETU"));
         etudiantDn.setCellValueFactory(new PropertyValueFactory<>("DATE_NAISSANCE"));
         etudiantAd.setCellValueFactory(new PropertyValueFactory<>("ADDRESSE"));
+    
+        
+        data = FXCollections.observableArrayList();
+
+        Connection connection;
+        try {
+        
+        connection = Database.getConnectionDb();
+            
+        String sql = "SELECT * FROM etudiant";
+        
+        PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
+        ResultSet rs = preparedStatement.executeQuery(sql );
+        
+        while (rs.next()) {	
+                data.add(new Etudiant(rs.getInt("MATRICULE_ETU"),rs.getString("NOM_ETU"),rs.getString("PRENOM_ETU"),rs.getString("DATE_NAISSANCE"),rs.getString("ADDRESSE")));
+        }
+        
+        } catch (SQLException ex) {
+            Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
                 
-        //add your data to the table here.
-        etudiantTable.setItems(etudiant);
+        etudiantTable.setItems(data);
         
     } 
     
     // add your data here from any source 
     private ObservableList<Etudiant> etudiant = FXCollections.observableArrayList(
-            new Etudiant(1,"Amos", "Chepchieng", "Chepchieng", "Chepchieng")
+           list
     );
 
-    
-    
     
 }
