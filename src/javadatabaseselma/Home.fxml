@@ -111,6 +111,10 @@
                   <Font size="18.0" />
                </font>
             </Label>
+            <Label fx:id="insertResult3" layoutX="139.0" layoutY="332.0" />
+            <Label fx:id="insertResult4" layoutX="419.0" layoutY="332.0" />
+            <Label fx:id="insertResult2" layoutX="474.0" layoutY="71.0" />
+            <Label fx:id="insertResult1" layoutX="125.0" layoutY="72.0" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="a2" layoutX="371.0" layoutY="124.0" prefHeight="210.0" prefWidth="282.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);" />

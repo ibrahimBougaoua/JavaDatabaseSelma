@@ -262,14 +262,15 @@ public class HomeController implements Initializable {
     Label l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l16,l17;
     
     @FXML
+    Label insertResult1,insertResult2,insertResult3,insertResult4;
+    
+    @FXML
     public void Retry(ActionEvent e) throws SQLException {
         
     a1.setStyle("-fx-background-color: #fff;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
     a2.setStyle("-fx-background-color: #fff;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
     a3.setStyle("-fx-background-color: #fff;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
     a4.setStyle("-fx-background-color: #fff;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
-    
-    
     
     Matricule_etu.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
     nom_etu.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
@@ -352,6 +353,29 @@ public class HomeController implements Initializable {
         
         String selected = ((RadioButton) group1.getSelectedToggle()).getText();
         
+        insertResult1.setText("");
+        insertResult2.setText("");
+        insertResult3.setText("");
+        insertResult4.setText("");
+            
+    Matricule_etu.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    nom_etu.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    prenom_etu.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    date_naissance.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    Addresse.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    Matricule_etu_unit.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    code_unit.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    note_cc.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    note_tp.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    note_examen.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    Matricule_Ens.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    nom_ens.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    prenom_ens.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    code_unit_u.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    libelle.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    nbr_heurs.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    Matricule_Ens_u.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    
         a1.setStyle("-fx-background-color: #fff;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
         a2.setStyle("-fx-background-color: #fff;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
         a3.setStyle("-fx-background-color: #fff;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
@@ -382,7 +406,7 @@ public class HomeController implements Initializable {
             
         if(selected.equals("one"))
         {
-            a1.setStyle("-fx-background-color: #17a2b8;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
+            a1.setStyle("-fx-background-color: #6c757d;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
             l1.setTextFill(Color.web("#fff"));
             l2.setTextFill(Color.web("#fff"));
             l3.setTextFill(Color.web("#fff"));
@@ -390,7 +414,7 @@ public class HomeController implements Initializable {
             l5.setTextFill(Color.web("#fff"));
         } else if(selected.equals("tow"))
         {
-            a2.setStyle("-fx-background-color: #17a2b8;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
+            a2.setStyle("-fx-background-color: #6c757d;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
             l6.setTextFill(Color.web("#fff"));
             l7.setTextFill(Color.web("#fff"));
             l8.setTextFill(Color.web("#fff"));
@@ -398,13 +422,13 @@ public class HomeController implements Initializable {
             l10.setTextFill(Color.web("#fff"));
         } else if(selected.equals("three"))
         {
-            a3.setStyle("-fx-background-color: #17a2b8;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
+            a3.setStyle("-fx-background-color: #6c757d;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
             l11.setTextFill(Color.web("#fff"));
             l12.setTextFill(Color.web("#fff"));
             l13.setTextFill(Color.web("#fff"));
         } else if(selected.equals("four"))
         {
-            a4.setStyle("-fx-background-color: #17a2b8;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
+            a4.setStyle("-fx-background-color: #6c757d;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
             l14.setTextFill(Color.web("#fff"));
             l15.setTextFill(Color.web("#fff"));
             l16.setTextFill(Color.web("#fff"));
@@ -451,20 +475,20 @@ public class HomeController implements Initializable {
         
         if(date_naissance.getValue().equals(null))
         {
-            date_naissance.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
+            date_naissance.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545; -fx-border-width: 1px 1px 1px 1px;");
             //messageDE.setText("Date naissance is empty !");
             //messageDE.setTextFill(Color.rgb(210, 39, 30));
         } else {
-            date_naissance.setStyle("-fx-text-box-border: #28a745; -fx-focus-color: #28a745;");
+            date_naissance.setStyle("-fx-text-box-border: #28a745; -fx-focus-color: #28a745; -fx-border-width: 1px 1px 1px 1px;");
         }
         
         if(Addresse.getText().equals(""))
         {
-            Addresse.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
+            Addresse.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545; -fx-border-width: 1px 1px 1px 1px;");
             //messageAE.setText("Addresse is empty !");
             //messageAE.setTextFill(Color.rgb(210, 39, 30));
         } else {
-            Addresse.setStyle("-fx-text-box-border: #28a745; -fx-focus-color: #28a745;");
+            Addresse.setStyle("-fx-text-box-border: #28a745; -fx-focus-color: #28a745; -fx-border-width: 1px 1px 1px 1px;");
         }
         
         if(!Matricule_etu.getText().equals(""))
@@ -497,8 +521,8 @@ public class HomeController implements Initializable {
                             ps.setString(4, date_naissance.getValue().toString());
                             ps.setString(5, Addresse.getText());
                             ps.executeUpdate();
-                            //messageR.setText("Etudiant added successfully !");
-                            //messageR.setTextFill(Color.GREEN);
+                            insertResult1.setText("Etudiant added successfully !");
+                            insertResult1.setTextFill(Color.GREEN);
                         }
                     }
                 }
@@ -576,8 +600,8 @@ public class HomeController implements Initializable {
                             ps.setInt(4, Integer.parseInt(note_tp.getText()));
                             ps.setInt(5, Integer.parseInt(note_examen.getText()));
                             ps.executeUpdate();
-                            //messageR.setText("Etudiant added successfully !");
-                            //messageR.setTextFill(Color.GREEN);
+                            insertResult2.setText("Etudiant unite added successfully !");
+                            insertResult2.setTextFill(Color.GREEN);
                         }
                     }
                 }
@@ -636,8 +660,8 @@ public class HomeController implements Initializable {
                     ps.setString(2, nom_ens.getText());
                     ps.setString(3, prenom_ens.getText());
                     ps.executeUpdate();
-                    //messageR.setText("Etudiant added successfully !");
-                    //messageR.setTextFill(Color.GREEN);
+                    insertResult3.setText("Enseignant added successfully !");
+                    insertResult3.setTextFill(Color.GREEN);
                 }
             }
         }
@@ -702,8 +726,8 @@ public class HomeController implements Initializable {
                             ps.setInt(3, Integer.parseInt(nbr_heurs.getText()));
                             ps.setInt(4, Integer.parseInt(Matricule_Ens_u.getText()));
                             ps.executeUpdate();
-                            //messageR.setText("Etudiant added successfully !");
-                            //messageR.setTextFill(Color.GREEN);
+                            insertResult4.setText("Unite added successfully !");
+                            insertResult4.setTextFill(Color.GREEN);
                     }
                 }
             }
