@@ -90,6 +90,10 @@ public class EnseignantController implements Initializable {
     @FXML
     public void validerDataByMatricule(ActionEvent e) throws SQLException {
         
+        boolean isNumeric = getMatriculeField.getText().chars().allMatch( Character::isDigit );
+
+        if(isNumeric)
+        {
         String sql = "SELECT * FROM enseignant where MATRICULE_ENS  = " + Integer.parseInt(getMatriculeField.getText());
         Connection connection = Database.getConnectionDb();
         PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
@@ -103,6 +107,10 @@ public class EnseignantController implements Initializable {
            getMatriculeEns.setText(rs.getString("MATRICULE_ENS").toString());
            getNomEns.setText(rs.getString("NOM_ENS").toString()); 
            getPrenomEns.setText(rs.getString("PRENOM_ENS").toString());
+        }
+        } else {
+            errorValider.setText("Votre Matricule est faux ou n'existe pas");
+            errorValider.setTextFill(Color.rgb(210, 39, 30));
         }
         
         if(getMatriculeEns.getText().equals(""))
