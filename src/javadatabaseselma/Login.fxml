@@ -40,12 +40,12 @@
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Button layoutX="51.0" layoutY="263.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #17a2b8;" text="Exit" textFill="WHITE">
+      <Button fx:id="exit" layoutX="51.0" layoutY="263.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #17a2b8;" text="Exit" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="141.0" layoutY="263.0" mnemonicParsing="false" style="-fx-background-color: #17a2b8;" text="Reset" textFill="WHITE">
+      <Button layoutX="141.0" layoutY="263.0" mnemonicParsing="false" onAction="#ResetValiderForm" style="-fx-background-color: #17a2b8;" text="Reset" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>

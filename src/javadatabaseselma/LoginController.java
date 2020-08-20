@@ -56,6 +56,9 @@ public class LoginController implements Initializable {
     Button loginDashoard;
     
     @FXML
+    Button exit;
+    
+    @FXML
     public void login( ActionEvent e ) throws SQLException, IOException {
         
         Connection connection = Database.getConnectionDb();
@@ -114,7 +117,7 @@ public class LoginController implements Initializable {
                     Stage st = (Stage) loginDashoard.getScene().getWindow();
                     st.close();
               } else {
-                    messageE.setText("username or password is incorrect !");
+                    messageE.setText("Username or password is incorrect !");
                     messageE.setTextFill(Color.rgb(210, 39, 30));
               } 
            }
@@ -122,21 +125,18 @@ public class LoginController implements Initializable {
 
     }
     
-    public static boolean ifLogIn(Connection connection , String username , String password ) throws SQLException {
-        
-        String sql = "SELECT * FROM users";
-        
-        PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
-        ResultSet rs = preparedStatement.executeQuery(sql );
-        
-        while (rs.next()) {	
-            if ( username.equals(rs.getString("username")) & password.equals(rs.getString("password")) ) { 
-                return true;
-	    }
-        }
-        return false;
+    @FXML
+    public void ResetValiderForm(ActionEvent e) throws SQLException {
+        username.setText("");
+        password.setText("");
     }
-	
+    
+    @FXML
+    public void closeWindow(ActionEvent e) throws SQLException {
+        Stage stage = (Stage) exit.getScene().getWindow();
+        stage.close();
+    }
+    
     /**
      * Initializes the controller class.
      */
