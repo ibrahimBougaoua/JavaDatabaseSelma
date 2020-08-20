@@ -226,13 +226,13 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView prefHeight="388.0" prefWidth="463.0">
+                        <TableView fx:id="etudiantUnit" prefHeight="388.0" prefWidth="463.0">
                           <columns>
-                            <TableColumn prefWidth="110.0" text="Matricule_etu" />
-                            <TableColumn prefWidth="90.0" text="Code_Unite" />
-                              <TableColumn prefWidth="95.0" text="Note_CC" />
-                              <TableColumn prefWidth="65.0" text="Note_TP" />
-                              <TableColumn prefWidth="102.0" text="Note_Examen" />
+                            <TableColumn fx:id="etudiantUnitMatEtu" prefWidth="110.0" text="Matricule_etu" />
+                            <TableColumn fx:id="etudiantUnitCode" prefWidth="90.0" text="Code_Unite" />
+                            <TableColumn fx:id="etudiantUnitNoteCc" prefWidth="95.0" text="Note_CC" />
+                            <TableColumn fx:id="etudiantUnitNoteTp" prefWidth="65.0" text="Note_TP" />
+                            <TableColumn fx:id="etudiantUnitNoteExamen" prefWidth="102.0" text="Note_Examen" />
                           </columns>
                         </TableView>
                      </children>
