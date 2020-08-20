@@ -112,10 +112,10 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="357.0" layoutY="124.0" prefHeight="210.0" prefWidth="282.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);" />
-      <AnchorPane layoutX="59.0" layoutY="125.0" prefHeight="208.0" prefWidth="278.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);" />
-      <AnchorPane layoutX="357.0" layoutY="383.0" prefHeight="173.0" prefWidth="282.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);" />
-      <AnchorPane layoutX="55.0" layoutY="383.0" prefHeight="172.0" prefWidth="281.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);" />
+      <AnchorPane layoutX="371.0" layoutY="124.0" prefHeight="210.0" prefWidth="282.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);" />
+      <AnchorPane layoutX="59.0" layoutY="125.0" prefHeight="208.0" prefWidth="286.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);" />
+      <AnchorPane layoutX="376.0" layoutY="383.0" prefHeight="173.0" prefWidth="282.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);" />
+      <AnchorPane layoutX="58.0" layoutY="383.0" prefHeight="172.0" prefWidth="288.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);" />
       <TextField fx:id="Matricule_etu" layoutX="174.0" layoutY="142.0" />
       <TextField fx:id="nom_etu" layoutX="174.0" layoutY="176.0" />
       <TextField fx:id="prenom_etu" layoutX="173.0" layoutY="213.0" />
@@ -155,104 +155,104 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="Matricule_etu_unit" layoutX="473.0" layoutY="142.0" />
-      <TextField fx:id="code_unit" layoutX="473.0" layoutY="176.0" />
-      <TextField fx:id="note_cc" layoutX="472.0" layoutY="213.0" />
-      <TextField fx:id="note_tp" layoutX="473.0" layoutY="250.0" />
-      <TextField fx:id="note_examen" layoutX="473.0" layoutY="288.0" />
-      <RadioButton fx:id="radio2" layoutX="354.0" layoutY="90.0" mnemonicParsing="false" text="EtudiantUnite" textFill="#17a2b8">
+      <TextField fx:id="Matricule_etu_unit" layoutX="492.0" layoutY="142.0" />
+      <TextField fx:id="code_unit" layoutX="492.0" layoutY="176.0" />
+      <TextField fx:id="note_cc" layoutX="491.0" layoutY="213.0" />
+      <TextField fx:id="note_tp" layoutX="492.0" layoutY="250.0" />
+      <TextField fx:id="note_examen" layoutX="492.0" layoutY="288.0" />
+      <RadioButton fx:id="radio2" layoutX="373.0" layoutY="90.0" mnemonicParsing="false" text="EtudiantUnite" textFill="#17a2b8">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </RadioButton>
-      <Label layoutX="367.0" layoutY="143.0" text="Matricule_etu">
+      <Label layoutX="386.0" layoutY="143.0" text="Matricule_etu">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="368.0" layoutY="178.0" text="Code_Unite">
+      <Label layoutX="387.0" layoutY="178.0" text="Code_Unite">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="369.0" layoutY="213.0" text="Note_CC">
+      <Label layoutX="388.0" layoutY="213.0" text="Note_CC">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="370.0" layoutY="250.0" text="Note_TP">
+      <Label layoutX="389.0" layoutY="250.0" text="Note_TP">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="371.0" layoutY="289.0" text="Note_Examen">
+      <Label layoutX="390.0" layoutY="289.0" text="Note_Examen">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="Matricule_Ens" layoutX="174.0" layoutY="404.0" />
-      <TextField fx:id="nom_ens" layoutX="174.0" layoutY="438.0" />
-      <TextField fx:id="prenom_ens" layoutX="173.0" layoutY="475.0" />
+      <TextField fx:id="Matricule_Ens" layoutX="177.0" layoutY="404.0" />
+      <TextField fx:id="nom_ens" layoutX="177.0" layoutY="438.0" />
+      <TextField fx:id="prenom_ens" layoutX="176.0" layoutY="475.0" />
       <RadioButton fx:id="radio3" layoutX="56.0" layoutY="350.0" mnemonicParsing="false" text="Enseignant" textFill="#17a2b8">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </RadioButton>
-      <Label layoutX="68.0" layoutY="405.0" text="Matricule_Ens">
+      <Label layoutX="71.0" layoutY="405.0" text="Matricule_Ens">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="69.0" layoutY="440.0" text="Nom">
+      <Label layoutX="72.0" layoutY="440.0" text="Nom">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="70.0" layoutY="475.0" text="Prenom">
+      <Label layoutX="73.0" layoutY="475.0" text="Prenom">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="code_unit_u" layoutX="474.0" layoutY="404.0" />
-      <TextField fx:id="libelle" layoutX="474.0" layoutY="438.0" />
-      <TextField fx:id="nbr_heurs" layoutX="473.0" layoutY="475.0" />
-      <TextField fx:id="Matricule_Ens_u" layoutX="474.0" layoutY="512.0" />
-      <RadioButton fx:id="radio4" layoutX="355.0" layoutY="352.0" mnemonicParsing="false" text="Unite" textFill="#17a2b8">
+      <TextField fx:id="code_unit_u" layoutX="493.0" layoutY="404.0" />
+      <TextField fx:id="libelle" layoutX="493.0" layoutY="438.0" />
+      <TextField fx:id="nbr_heurs" layoutX="492.0" layoutY="475.0" />
+      <TextField fx:id="Matricule_Ens_u" layoutX="493.0" layoutY="512.0" />
+      <RadioButton fx:id="radio4" layoutX="374.0" layoutY="352.0" mnemonicParsing="false" text="Unite" textFill="#17a2b8">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </RadioButton>
-      <Label layoutX="368.0" layoutY="405.0" text="Code_Unite">
+      <Label layoutX="387.0" layoutY="405.0" text="Code_Unite">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="369.0" layoutY="440.0" text="Libelle">
+      <Label layoutX="388.0" layoutY="440.0" text="Libelle">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="370.0" layoutY="475.0" text="Nbr_Heurs">
+      <Label layoutX="389.0" layoutY="475.0" text="Nbr_Heurs">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="371.0" layoutY="512.0" text="Matricule_Ens">
+      <Label layoutX="390.0" layoutY="512.0" text="Matricule_Ens">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="reset" layoutX="358.0" layoutY="579.0" mnemonicParsing="false" onAction="#Retry" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #17a2b8;" text="Reset" textFill="WHITE">
+      <Button fx:id="reset" layoutX="374.0" layoutY="579.0" mnemonicParsing="false" onAction="#Retry" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #17a2b8;" text="Reset" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="insert" layoutX="567.0" layoutY="578.0" mnemonicParsing="false" onAction="#AddEtudiant" prefHeight="28.0" prefWidth="72.0" style="-fx-background-color: #17a2b8;" text="Insert" textFill="WHITE">
+      <Button fx:id="insert" layoutX="586.0" layoutY="578.0" mnemonicParsing="false" onAction="#AddEtudiant" prefHeight="28.0" prefWidth="72.0" style="-fx-background-color: #17a2b8;" text="Insert" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="return_to_login_page" layoutX="55.0" layoutY="579.0" mnemonicParsing="false" onAction="#backToLoginPage" prefHeight="30.0" prefWidth="202.0" style="-fx-background-color: #17a2b8;" text="Return to login page" textFill="WHITE">
+      <Button fx:id="return_to_login_page" layoutX="55.0" layoutY="579.0" mnemonicParsing="false" onAction="#backToLoginPage" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: #17a2b8;" text="Return to login page" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>

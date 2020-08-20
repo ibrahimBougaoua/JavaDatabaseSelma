@@ -307,30 +307,35 @@ public class HomeController implements Initializable {
         
         if(Matricule_etu.getText().equals(""))
         {
+            Matricule_etu.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
             //messageME.setText("Matricule is empty !");
             //messageME.setTextFill(Color.rgb(210, 39, 30));
         }
         
         if(nom_etu.getText().equals(""))
-        {
+        {            
+            nom_etu.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
             //messageNE.setText("Nom is empty !");
             //messageNE.setTextFill(Color.rgb(210, 39, 30));
         }
         
         if(prenom_etu.getText().equals(""))
         {
+            prenom_etu.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
             //messagePE.setText("Prenome is empty !");
             //messagePE.setTextFill(Color.rgb(210, 39, 30));
         }
         
         if(date_naissance.getText().equals(""))
         {
+            date_naissance.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
             //messageDE.setText("Date naissance is empty !");
             //messageDE.setTextFill(Color.rgb(210, 39, 30));
         }
         
         if(Addresse.getText().equals(""))
         {
+            Addresse.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
             //messageAE.setText("Addresse is empty !");
             //messageAE.setTextFill(Color.rgb(210, 39, 30));
         }
@@ -339,17 +344,24 @@ public class HomeController implements Initializable {
         {
             if( duplicateMatricule(connection,Matricule_etu.getText()) )
             {
+                Matricule_etu.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
                 //messageME.setText("duplicate matricule !");
                 //messageME.setTextFill(Color.rgb(210, 39, 30));
+            } else {
+                Matricule_etu.setStyle("-fx-text-box-border: #28a745; -fx-focus-color: #28a745;");
             }
            if(!nom_etu.getText().equals(""))
-           {
+           {  
+               Matricule_etu.setStyle("-fx-text-box-border: #28a745; -fx-focus-color: #28a745;");
                 if(!prenom_etu.getText().equals(""))
-                {
+                {  
+                    Matricule_etu.setStyle("-fx-text-box-border: #28a745; -fx-focus-color: #28a745;");
                     if(!date_naissance.getText().equals(""))
-                    {
+                    {  
+                        Matricule_etu.setStyle("-fx-text-box-border: #28a745; -fx-focus-color: #28a745;");
                         if(!Addresse.getText().equals(""))
-                        {
+                        {  
+                            Matricule_etu.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
                             String sql = "INSERT INTO etudiant (MATRICULE_ETU,NOM_ETU,PRENOM_ETU,DATE_NAISSANCE,ADDRESSE) VALUES (?,?,?,?,?)";
                             PreparedStatement ps = (PreparedStatement) connection.prepareStatement(sql);
                             ps.setString(1, Matricule_etu.getText());
@@ -380,30 +392,35 @@ public class HomeController implements Initializable {
         
         if(Matricule_etu_unit.getText().equals(""))
         {
+            Matricule_etu_unit.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
             //messageME.setText("Matricule is empty !");
             //messageME.setTextFill(Color.rgb(210, 39, 30));
         }
         
         if(code_unit.getText().equals(""))
         {
+            code_unit.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
             //messageNE.setText("Nom is empty !");
             //messageNE.setTextFill(Color.rgb(210, 39, 30));
         }
         
         if(note_cc.getText().equals(""))
         {
+            note_cc.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
             //messagePE.setText("Prenome is empty !");
             //messagePE.setTextFill(Color.rgb(210, 39, 30));
         }
         
         if(note_tp.getText().equals(""))
         {
+            note_tp.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
             //messageDE.setText("Date naissance is empty !");
             //messageDE.setTextFill(Color.rgb(210, 39, 30));
         }
         
         if(note_examen.getText().equals(""))
         {
+            note_examen.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
             //messageAE.setText("Addresse is empty !");
             //messageAE.setTextFill(Color.rgb(210, 39, 30));
         }
@@ -412,6 +429,7 @@ public class HomeController implements Initializable {
         {
             if( duplicateMatriculeEtUnit(connection,Matricule_etu_unit.getText()) )
             {
+                Matricule_etu_unit.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
                 //messageME.setText("duplicate matricule !");
                 //messageME.setTextFill(Color.rgb(210, 39, 30));
             }
@@ -454,18 +472,21 @@ public class HomeController implements Initializable {
         
         if(Matricule_Ens.getText().equals(""))
         {
+            Matricule_Ens.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
             //messageME.setText("Matricule is empty !");
             //messageME.setTextFill(Color.rgb(210, 39, 30));
         }
         
         if(nom_ens.getText().equals(""))
         {
+            nom_ens.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
             //messageNE.setText("Nom is empty !");
             //messageNE.setTextFill(Color.rgb(210, 39, 30));
         }
         
         if(prenom_ens.getText().equals(""))
         {
+            prenom_ens.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
             //messagePE.setText("Prenome is empty !");
             //messagePE.setTextFill(Color.rgb(210, 39, 30));
         }
@@ -474,6 +495,7 @@ public class HomeController implements Initializable {
         {
             if( duplicateMatriculeEns(connection,Matricule_Ens.getText()) )
             {
+                Matricule_Ens.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
                 //messageME.setText("duplicate matricule !");
                 //messageME.setTextFill(Color.rgb(210, 39, 30));
             }
@@ -506,24 +528,28 @@ public class HomeController implements Initializable {
         
         if(code_unit_u.getText().equals(""))
         {
+            code_unit_u.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
             //messageME.setText("Matricule is empty !");
             //messageME.setTextFill(Color.rgb(210, 39, 30));
         }
         
         if(libelle.getText().equals(""))
         {
+            libelle.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
             //messageNE.setText("Nom is empty !");
             //messageNE.setTextFill(Color.rgb(210, 39, 30));
         }
         
         if(nbr_heurs.getText().equals(""))
         {
+            nbr_heurs.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
             //messagePE.setText("Prenome is empty !");
             //messagePE.setTextFill(Color.rgb(210, 39, 30));
         }
         
         if(Matricule_Ens_u.getText().equals(""))
         {
+            Matricule_Ens_u.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
             //messageDE.setText("Date naissance is empty !");
             //messageDE.setTextFill(Color.rgb(210, 39, 30));
         }
@@ -532,6 +558,7 @@ public class HomeController implements Initializable {
         {
             if( duplicateMatriculeCodeUnite(connection,code_unit_u.getText()) )
             {
+                code_unit_u.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
                 //messageME.setText("duplicate matricule !");
                 //messageME.setTextFill(Color.rgb(210, 39, 30));
             }
