@@ -113,7 +113,7 @@ public class HomeController implements Initializable {
     @FXML
     Label messageXEU;
     
-    // etudiant unit fields
+    // enseignant unit fields
     
     @FXML
     TextField Matricule_Ens;

@@ -6,19 +6,56 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="247.0" prefWidth="422.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javadatabaseselma.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="363.0" prefWidth="449.0" style="-fx-background-color: #fff;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javadatabaseselma.LoginController">
     <stylesheets>
         <URL value="@login.css" />
     </stylesheets>
    <children>
+      <AnchorPane layoutX="23.0" layoutY="32.0" prefHeight="282.0" prefWidth="404.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);">
+         <children>
+            <AnchorPane prefHeight="47.0" prefWidth="404.0" style="-fx-background-color: #17a2b8;">
+               <children>
+                  <Label layoutX="29.0" layoutY="13.0" text="Login to you'r account !" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
        
        
-      <TextField id="username" fx:id="username" layoutX="70.0" layoutY="47.0" prefHeight="38.0" prefWidth="315.0" />
-      <PasswordField id="password" fx:id="password" layoutX="70.0" layoutY="116.0" prefHeight="38.0" prefWidth="315.0" />
-      <Button fx:id="loginDashoard" layoutX="70.0" layoutY="184.0" mnemonicParsing="false" onAction="#login" prefHeight="38.0" prefWidth="72.0" text="login" />
-      <Label id="messageU" fx:id="messageU" layoutX="70.0" layoutY="93.0" prefHeight="17.0" prefWidth="157.0" />
-      <Label id="messageP" fx:id="messageP" layoutX="71.0" layoutY="161.0" prefHeight="17.0" prefWidth="157.0" />
-      <Label id="messageE" fx:id="messageE" layoutX="181.0" layoutY="183.0" prefHeight="17.0" prefWidth="203.0" />
+      <TextField id="username" fx:id="username" layoutX="141.0" layoutY="114.0" prefHeight="31.0" prefWidth="260.0" />
+      <PasswordField id="password" fx:id="password" layoutX="141.0" layoutY="186.0" prefHeight="31.0" prefWidth="260.0" />
+      <Button fx:id="loginDashoard" layoutX="344.0" layoutY="263.0" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="57.0" style="-fx-background-color: #17a2b8;" text="Login" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Label id="messageU" fx:id="messageU" layoutX="142.0" layoutY="158.0" prefHeight="17.0" prefWidth="157.0" />
+      <Label id="messageP" fx:id="messageP" layoutX="142.0" layoutY="228.0" prefHeight="17.0" prefWidth="157.0" />
+      <Label id="messageE" fx:id="messageE" layoutX="130.0" layoutY="324.0" prefHeight="17.0" prefWidth="203.0" />
+      <Button layoutX="51.0" layoutY="263.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #17a2b8;" text="Exit" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="141.0" layoutY="263.0" mnemonicParsing="false" style="-fx-background-color: #17a2b8;" text="Reset" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="51.0" layoutY="115.0" text="Username">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="51.0" layoutY="187.0" text="Password">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
