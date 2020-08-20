@@ -601,10 +601,6 @@ public class HomeController implements Initializable {
         
     } 
     
-    // add your data here from any source 
-    private ObservableList<Etudiant> etudiant = FXCollections.observableArrayList(
-           list
-    );
 
     
 }
