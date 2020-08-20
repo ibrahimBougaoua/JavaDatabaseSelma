@@ -93,7 +93,7 @@ public class EnseignantController implements Initializable {
         Connection connection = Database.getConnectionDb();
         PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
         ResultSet rs = preparedStatement.executeQuery(sql );
-        
+        error.setText("");
         while (rs.next()) {
            getMatriculeEns.setText(rs.getString("MATRICULE_ENS").toString());
            getNomEns.setText(rs.getString("NOM_ENS").toString()); 
@@ -101,7 +101,10 @@ public class EnseignantController implements Initializable {
         }
         
         if(getMatriculeEns.getText().equals(""))
-            error.setText("Votre Matricule est foux ou n'exist pas");
+        {
+            error.setText("Votre Matricule est faux ou n'existe pas");
+            error.setTextFill(Color.rgb(210, 39, 30));
+        }
     }
     
         
