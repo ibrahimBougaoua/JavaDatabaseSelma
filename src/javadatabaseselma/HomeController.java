@@ -249,6 +249,23 @@ public class HomeController implements Initializable {
     @FXML
     TableColumn<Unite, Integer> uniteMe;
     
+    // using by etudiant validation...
+    
+    @FXML
+    TextField getMatriculeField;
+    
+    @FXML
+    Label getMatricule;
+    
+    @FXML
+    Label getNom;
+    
+    @FXML
+    Label getPrenom;
+    
+    @FXML
+    Label getDn;
+    
     @FXML
     public void Retry(ActionEvent e) throws SQLException {
     Matricule_etu.setText("");
@@ -543,6 +560,23 @@ public class HomeController implements Initializable {
         }
         
     }
+    
+    
+    public static boolean validerDataByMatricule() throws SQLException {
+        
+        String sql = "SELECT * FROM etudiant where MATRICULE_ETU = '" + getMatriculeField.getText() + "'";
+        
+        PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
+        ResultSet rs = preparedStatement.executeQuery(sql );
+        
+        while (rs.next()) {	
+            if ( username.equals(rs.getString("username")) & password.equals(rs.getString("password")) ) { 
+                return true;
+	    }
+        }
+        return false;
+    }
+    
     
     public static boolean duplicateMatricule(Connection connection , String matricule ) throws SQLException {
         
