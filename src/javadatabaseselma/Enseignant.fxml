@@ -7,17 +7,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="417.0" prefWidth="825.0" style="-fx-background-color: #fff;" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="javadatabaseselma.EnseignantController">
+<AnchorPane id="AnchorPane" prefHeight="417.0" prefWidth="825.0" style="-fx-background-color: #fff;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javadatabaseselma.EnseignantController">
     <stylesheets>
         <URL value="@enseignant.css" />
     </stylesheets>
    <children>
       <AnchorPane layoutX="21.0" layoutY="71.0" prefHeight="320.0" prefWidth="418.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);">
          <children>
-            <Button layoutX="273.0" layoutY="278.0" mnemonicParsing="false" style="-fx-background-color: #17a2b8;" text="Return to login page" textFill="WHITE" />
+            <Button fx:id="backToLoginPage" layoutX="273.0" layoutY="278.0" mnemonicParsing="false" onAction="#backToLoginPage" style="-fx-background-color: #17a2b8;" text="Return to login page" textFill="WHITE" />
             <AnchorPane layoutY="-3.0" prefHeight="61.0" prefWidth="418.0" style="-fx-background-color: #17a2b8;" />
             <Button fx:id="resetValiderEns" layoutX="18.0" layoutY="278.0" mnemonicParsing="false" onAction="#ResetValiderForm" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #17a2b8;" text="Reset" textFill="WHITE" />
-            <Label fx:id="errorValider" layoutX="19.0" layoutY="235.0" text="" />
+            <Label fx:id="errorValider" layoutX="18.0" layoutY="235.0" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="466.0" layoutY="71.0" prefHeight="320.0" prefWidth="327.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);">

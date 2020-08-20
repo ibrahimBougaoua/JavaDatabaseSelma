@@ -6,6 +6,7 @@
 package javadatabaseselma;
 
 import com.mysql.jdbc.PreparedStatement;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -17,12 +18,17 @@ import static javadatabaseselma.HomeController.duplicateMatriculeEns;
 import static javadatabaseselma.HomeController.duplicateMatriculeEtUnit;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.SceneAntialiasing;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -76,6 +82,9 @@ public class EnseignantController implements Initializable {
     Button resetValiderEns;
     
     @FXML
+    Button backToLoginPage;
+    
+    @FXML
     public void ResetInsertForm(ActionEvent e) throws SQLException {
     Matricule_Ens.setText("");
     nom_ens.setText("");
@@ -91,6 +100,7 @@ public class EnseignantController implements Initializable {
     public void validerDataByMatricule(ActionEvent e) throws SQLException {
         
         boolean isNumeric = getMatriculeField.getText().chars().allMatch( Character::isDigit );
+        errorValider.setText("");
 
         if(isNumeric)
         {
@@ -151,11 +161,19 @@ public class EnseignantController implements Initializable {
         
         if(!Matricule_Ens.getText().equals(""))
         {
+            
+            boolean isNumeric = Matricule_Ens.getText().chars().allMatch( Character::isDigit );
+            mat.setText("");
+            
             if( HomeController.duplicateMatriculeEns(connection,Matricule_Ens.getText()) )
             {
                 mat.setText("duplicate matricule !");
                 mat.setTextFill(Color.rgb(210, 39, 30));
             }
+
+            if(isNumeric)
+            {
+            
            if(!nom_ens.getText().equals(""))
            {
                 if(!prenom_ens.getText().equals(""))
@@ -170,10 +188,30 @@ public class EnseignantController implements Initializable {
                     result.setTextFill(Color.GREEN);
                 }
             }
+           
+           } else {
+                mat.setText("cette valeur n'est pas valide");
+                mat.setTextFill(Color.rgb(210, 39, 30));
+            }
+            
         }
         
     }
     
+    @FXML
+    public void backToLoginPage(ActionEvent event) throws IOException  {
+        Stage stage = (Stage) backToLoginPage.getScene().getWindow();
+        stage.close();
+        Stage login = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        //Scene scene = new Scene(root, 450, 300);
+        Scene scene = new Scene(root, -1, -1, true, SceneAntialiasing.BALANCED);
+        scene.getStylesheets().add(getClass().getResource("login.css").toExternalForm());
+        login.setTitle("Login");
+        login.setScene(scene);
+        login.show();
+    }
+
     /**
      * Initializes the controller class.
      */
