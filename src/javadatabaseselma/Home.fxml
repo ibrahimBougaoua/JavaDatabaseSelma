@@ -59,7 +59,7 @@
                                   <TableColumn fx:id="etudiantUnitCode" prefWidth="94.0" text="Code_Unite" />
                                   <TableColumn fx:id="etudiantUnitNoteCc" prefWidth="88.0" text="Note_CC" />
                                   <TableColumn fx:id="etudiantUnitNoteTp" prefWidth="87.0" text="Note_TP" />
-                                  <TableColumn fx:id="etudiantUnitNoteExamen" prefWidth="150.0" text="Note_Examen" />
+                                  <TableColumn fx:id="etudiantUnitNoteExamen" prefWidth="148.6666259765625" text="Note_Examen" />
                                 </columns>
                               </TableView>
                            </children>
@@ -90,7 +90,7 @@
                                   <TableColumn fx:id="uniteCu" prefWidth="138.0" text="Code_Unite" />
                                   <TableColumn fx:id="uniteLb" prefWidth="122.0" text="Libelle" />
                                   <TableColumn fx:id="uniteNh" prefWidth="124.0" text="Nbr_Heurs" />
-                                  <TableColumn fx:id="uniteMe" prefWidth="168.0" text="Matricule_Ens" />
+                                  <TableColumn fx:id="uniteMe" prefWidth="167.3333740234375" text="Matricule_Ens" />
                                 </columns>
                               </TableView>
                            </children>
@@ -113,14 +113,14 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="371.0" layoutY="124.0" prefHeight="210.0" prefWidth="282.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);" />
-      <AnchorPane layoutX="59.0" layoutY="125.0" prefHeight="208.0" prefWidth="286.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);">
+      <AnchorPane fx:id="a2" layoutX="371.0" layoutY="124.0" prefHeight="210.0" prefWidth="282.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);" />
+      <AnchorPane fx:id="a1" layoutX="59.0" layoutY="125.0" prefHeight="208.0" prefWidth="286.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);">
          <children>
             <DatePicker fx:id="date_naissance" layoutX="113.0" layoutY="123.0" prefHeight="25.0" prefWidth="149.0" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="376.0" layoutY="383.0" prefHeight="173.0" prefWidth="282.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);" />
-      <AnchorPane layoutX="58.0" layoutY="383.0" prefHeight="172.0" prefWidth="288.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);" />
+      <AnchorPane fx:id="a4" layoutX="376.0" layoutY="383.0" prefHeight="173.0" prefWidth="282.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);" />
+      <AnchorPane fx:id="a3" layoutX="58.0" layoutY="383.0" prefHeight="172.0" prefWidth="288.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);" />
       <TextField fx:id="Matricule_etu" layoutX="174.0" layoutY="142.0" />
       <TextField fx:id="nom_etu" layoutX="174.0" layoutY="176.0" />
       <TextField fx:id="prenom_etu" layoutX="173.0" layoutY="213.0" />

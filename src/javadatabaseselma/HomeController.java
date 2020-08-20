@@ -37,6 +37,7 @@ import javafx.stage.Stage;
 import javadatabaseselma.Etudiant;
 import javafx.scene.SceneAntialiasing;
 import javafx.scene.control.DatePicker;
+import javafx.scene.layout.AnchorPane;
 
 
 /**
@@ -254,6 +255,8 @@ public class HomeController implements Initializable {
     @FXML
     TableColumn<Unite, Integer> uniteMe;
     
+    @FXML
+    AnchorPane a1,a2,a3,a4;
     
     @FXML
     public void Retry(ActionEvent e) throws SQLException {
@@ -296,6 +299,22 @@ public class HomeController implements Initializable {
         Connection connection = Database.getConnectionDb();
         
         String selected = ((RadioButton) group1.getSelectedToggle()).getText();
+        
+        if(selected.equals("one"))
+        {
+            a1.setStyle("-fx-border-color: #17a2b8; -fx-border-width: 1px 1px 1px 0px");
+        } else if(selected.equals("tow"))
+        {
+            a2.setStyle("-fx-border-color: #17a2b8; -fx-border-width: 1px 1px 1px 0px");
+        } else if(selected.equals("three"))
+        {
+            a3.setStyle("-fx-border-color: #17a2b8; -fx-border-width: 1px 1px 1px 0px");
+        } else if(selected.equals("four"))
+        {
+            a4.setStyle("-fx-border-color: #17a2b8; -fx-border-width: 1px 1px 1px 0px");
+        }
+        
+        
 
         switch (selected) {
             case "one":
