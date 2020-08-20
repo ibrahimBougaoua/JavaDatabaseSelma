@@ -20,6 +20,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.SceneAntialiasing;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -82,7 +83,8 @@ public class LoginController implements Initializable {
               if ( username.getText().equals("BDDAdmin") &&  password.getText().equals("TPAdmin") ) {
                     Stage HomeStage = new Stage();
                     Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
-                    Scene scene = new Scene(root, 1200, 600);
+                    //Scene scene = new Scene(root, 1200, 600);
+                    Scene scene = new Scene(root, -1, -1, true, SceneAntialiasing.BALANCED);
                     scene.getStylesheets().add(getClass().getResource("home.css").toExternalForm());
                     HomeStage.setTitle("Home");
                     HomeStage.setScene(scene);
