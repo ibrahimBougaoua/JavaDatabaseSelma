@@ -45,6 +45,7 @@ import javadatabaseselma.Etudiant;
 public class HomeController implements Initializable {
 
     private ObservableList<Etudiant> data;
+    private ObservableList<EtudiantUnite> etudiantUnitData;
 
     // etudiant fields
     
@@ -190,6 +191,7 @@ public class HomeController implements Initializable {
     
     ToggleGroup cgroup1;
 
+    // using for etudiant table
     @FXML
     TableView<Etudiant> etudiantTable;
     
@@ -208,6 +210,26 @@ public class HomeController implements Initializable {
     @FXML
     TableColumn<Etudiant, String> etudiantAd;
     
+    // using for etudiant unit
+    
+    @FXML
+    TableView<EtudiantUnite> etudiantUnit;
+    
+    @FXML
+    TableColumn<EtudiantUnite, Integer> etudiantUnitMatEtu;
+
+    @FXML
+    TableColumn<EtudiantUnite, String> etudiantUnitCode;
+
+    @FXML
+    TableColumn<EtudiantUnite, Integer> etudiantUnitNoteCc;
+    
+    @FXML
+    TableColumn<EtudiantUnite, Integer> etudiantUnitNoteTp;   
+    
+    @FXML
+    TableColumn<EtudiantUnite, Integer> etudiantUnitNoteExamen;
+
     @FXML
     public void Retry(ActionEvent e) throws SQLException {
     Matricule_etu.setText("");
@@ -575,7 +597,6 @@ public class HomeController implements Initializable {
         etudiantPrenom.setCellValueFactory(new PropertyValueFactory<>("PRENOM_ETU"));
         etudiantDn.setCellValueFactory(new PropertyValueFactory<>("DATE_NAISSANCE"));
         etudiantAd.setCellValueFactory(new PropertyValueFactory<>("ADDRESSE"));
-    
         
         data = FXCollections.observableArrayList();
 
@@ -598,6 +619,37 @@ public class HomeController implements Initializable {
         }
                 
         etudiantTable.setItems(data);
+        
+        
+        
+        //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
+        etudiantUnitMatEtu.setCellValueFactory(new PropertyValueFactory<>("MATRICULE_ETU"));
+        etudiantUnitCode.setCellValueFactory(new PropertyValueFactory<>("CODE_UNITE"));
+        etudiantUnitNoteCc.setCellValueFactory(new PropertyValueFactory<>("NOTE_CC"));
+        etudiantUnitNoteTp.setCellValueFactory(new PropertyValueFactory<>("NOTE_TP"));
+        etudiantUnitNoteExamen.setCellValueFactory(new PropertyValueFactory<>("NOTE_EXAMEN"));
+        
+        etudiantUnitData = FXCollections.observableArrayList();
+        
+        try {
+        
+        connection = Database.getConnectionDb();
+            
+        String sql = "SELECT * FROM etudiantunite";
+        
+        PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
+        ResultSet rs = preparedStatement.executeQuery(sql );
+        
+        while (rs.next()) {	
+                etudiantUnitData.add(new EtudiantUnite(rs.getInt("MATRICULE_ETU"),rs.getString("CODE_UNITE"),rs.getInt("NOTE_CC"),rs.getInt("NOTE_TP"),rs.getInt("NOTE_EXAMEN")));
+        }
+        
+        } catch (SQLException ex) {
+            Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                
+        etudiantUnit.setItems(etudiantUnitData);
+        
         
     } 
     
