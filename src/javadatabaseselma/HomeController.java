@@ -404,7 +404,7 @@ public class HomeController implements Initializable {
         l16.setTextFill(Color.web("#000"));
         l17.setTextFill(Color.web("#000"));
             
-        if(selected.equals("one"))
+        if(selected.equals("Etudiant"))
         {
             a1.setStyle("-fx-background-color: #6c757d;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
             l1.setTextFill(Color.web("#fff"));
@@ -412,7 +412,7 @@ public class HomeController implements Initializable {
             l3.setTextFill(Color.web("#fff"));
             l4.setTextFill(Color.web("#fff"));
             l5.setTextFill(Color.web("#fff"));
-        } else if(selected.equals("tow"))
+        } else if(selected.equals("EtudiantUnite"))
         {
             a2.setStyle("-fx-background-color: #6c757d;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
             l6.setTextFill(Color.web("#fff"));
@@ -420,13 +420,13 @@ public class HomeController implements Initializable {
             l8.setTextFill(Color.web("#fff"));
             l9.setTextFill(Color.web("#fff"));
             l10.setTextFill(Color.web("#fff"));
-        } else if(selected.equals("three"))
+        } else if(selected.equals("Enseignant"))
         {
             a3.setStyle("-fx-background-color: #6c757d;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
             l11.setTextFill(Color.web("#fff"));
             l12.setTextFill(Color.web("#fff"));
             l13.setTextFill(Color.web("#fff"));
-        } else if(selected.equals("four"))
+        } else if(selected.equals("Unite"))
         {
             a4.setStyle("-fx-background-color: #6c757d;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
             l14.setTextFill(Color.web("#fff"));
@@ -438,7 +438,7 @@ public class HomeController implements Initializable {
         
 
         switch (selected) {
-            case "one":
+            case "Etudiant":
         
         //messageME.setText("");
         //messageNE.setText("");
@@ -533,7 +533,7 @@ public class HomeController implements Initializable {
                      
                      
                      
-            case "tow":
+            case "EtudiantUnite":
         
         //messageME.setText("");
         //messageNE.setText("");
@@ -613,7 +613,7 @@ public class HomeController implements Initializable {
 
                      
                      
-            case "three":
+            case "Enseignant":
         
         //messageME.setText("");
         //messageNE.setText("");
@@ -669,7 +669,7 @@ public class HomeController implements Initializable {
                      
                      
 
-            case "four":
+            case "Unite":
         
         //messageME.setText("");
         //messageNE.setText("");
@@ -788,10 +788,10 @@ public class HomeController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         group1 = new ToggleGroup();
-        radio1.setText("one");
-        radio2.setText("tow");
-        radio3.setText("three");
-        radio4.setText("four");
+        radio1.setText("Etudiant");
+        radio2.setText("EtudiantUnite");
+        radio3.setText("Enseignant");
+        radio4.setText("Unite");
         radio1.setToggleGroup(group1);
         radio2.setToggleGroup(group1);
         radio3.setToggleGroup(group1);

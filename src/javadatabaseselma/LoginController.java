@@ -105,7 +105,7 @@ public class LoginController implements Initializable {
                     EtudiantStage.show();
                     Stage st = (Stage) loginDashoard.getScene().getWindow();
                     st.close();
-              } else if ( username.getText().equals("a") &&  password.getText().equals("a") ) {
+              } else if ( username.getText().equals("Enseignant") &&  password.getText().equals("TPEnseignant") ) {
                     Stage EtudiantStage = new Stage();
                     Parent root = FXMLLoader.load(getClass().getResource("Enseignant.fxml"));
                     //Scene scene = new Scene(root, 1200, 600);
