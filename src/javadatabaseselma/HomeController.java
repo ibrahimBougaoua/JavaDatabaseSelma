@@ -259,13 +259,59 @@ public class HomeController implements Initializable {
     AnchorPane a1,a2,a3,a4;
     
     @FXML
+    Label l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l16,l17;
+    
+    @FXML
     public void Retry(ActionEvent e) throws SQLException {
         
     a1.setStyle("-fx-background-color: #fff;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
     a2.setStyle("-fx-background-color: #fff;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
     a3.setStyle("-fx-background-color: #fff;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
     a4.setStyle("-fx-background-color: #fff;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
-         
+    
+    
+    
+    Matricule_etu.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    nom_etu.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    prenom_etu.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    date_naissance.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    Addresse.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    Matricule_etu_unit.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    code_unit.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    note_cc.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    note_tp.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    note_examen.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    Matricule_Ens.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    nom_ens.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    prenom_ens.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    code_unit_u.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    libelle.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    nbr_heurs.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    Matricule_Ens_u.setStyle("-fx-border-color: #ccc; -fx-border-width: 1px 1px 1px 0px");
+    
+    l1.setTextFill(Color.web("#000"));
+    l2.setTextFill(Color.web("#000"));
+    l3.setTextFill(Color.web("#000"));
+    l4.setTextFill(Color.web("#000"));
+    l5.setTextFill(Color.web("#000"));
+    l6.setTextFill(Color.web("#000"));
+    l7.setTextFill(Color.web("#000"));
+    l8.setTextFill(Color.web("#000"));
+    l9.setTextFill(Color.web("#000"));
+    l10.setTextFill(Color.web("#000"));
+    l6.setTextFill(Color.web("#000"));
+    l7.setTextFill(Color.web("#000"));
+    l8.setTextFill(Color.web("#000"));
+    l9.setTextFill(Color.web("#000"));
+    l10.setTextFill(Color.web("#000"));
+    l11.setTextFill(Color.web("#000"));
+    l12.setTextFill(Color.web("#000"));
+    l13.setTextFill(Color.web("#000"));
+    l14.setTextFill(Color.web("#000"));
+    l15.setTextFill(Color.web("#000"));
+    l16.setTextFill(Color.web("#000"));
+    l17.setTextFill(Color.web("#000"));
+    
     Matricule_etu.setText("");
     nom_etu.setText("");
     prenom_etu.setText("");
@@ -310,19 +356,59 @@ public class HomeController implements Initializable {
         a2.setStyle("-fx-background-color: #fff;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
         a3.setStyle("-fx-background-color: #fff;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
         a4.setStyle("-fx-background-color: #fff;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
-         
+        
+        l1.setTextFill(Color.web("#000"));
+        l2.setTextFill(Color.web("#000"));
+        l3.setTextFill(Color.web("#000"));
+        l4.setTextFill(Color.web("#000"));
+        l5.setTextFill(Color.web("#000"));
+        l6.setTextFill(Color.web("#000"));
+        l7.setTextFill(Color.web("#000"));
+        l8.setTextFill(Color.web("#000"));
+        l9.setTextFill(Color.web("#000"));
+        l10.setTextFill(Color.web("#000"));
+        l6.setTextFill(Color.web("#000"));
+        l7.setTextFill(Color.web("#000"));
+        l8.setTextFill(Color.web("#000"));
+        l9.setTextFill(Color.web("#000"));
+        l10.setTextFill(Color.web("#000"));
+        l11.setTextFill(Color.web("#000"));
+        l12.setTextFill(Color.web("#000"));
+        l13.setTextFill(Color.web("#000"));
+        l14.setTextFill(Color.web("#000"));
+        l15.setTextFill(Color.web("#000"));
+        l16.setTextFill(Color.web("#000"));
+        l17.setTextFill(Color.web("#000"));
+            
         if(selected.equals("one"))
         {
             a1.setStyle("-fx-background-color: #17a2b8;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
+            l1.setTextFill(Color.web("#fff"));
+            l2.setTextFill(Color.web("#fff"));
+            l3.setTextFill(Color.web("#fff"));
+            l4.setTextFill(Color.web("#fff"));
+            l5.setTextFill(Color.web("#fff"));
         } else if(selected.equals("tow"))
         {
             a2.setStyle("-fx-background-color: #17a2b8;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
+            l6.setTextFill(Color.web("#fff"));
+            l7.setTextFill(Color.web("#fff"));
+            l8.setTextFill(Color.web("#fff"));
+            l9.setTextFill(Color.web("#fff"));
+            l10.setTextFill(Color.web("#fff"));
         } else if(selected.equals("three"))
         {
             a3.setStyle("-fx-background-color: #17a2b8;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
+            l11.setTextFill(Color.web("#fff"));
+            l12.setTextFill(Color.web("#fff"));
+            l13.setTextFill(Color.web("#fff"));
         } else if(selected.equals("four"))
         {
             a4.setStyle("-fx-background-color: #17a2b8;-fx-effect:dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);");
+            l14.setTextFill(Color.web("#fff"));
+            l15.setTextFill(Color.web("#fff"));
+            l16.setTextFill(Color.web("#fff"));
+            l17.setTextFill(Color.web("#fff"));
         }
         
         

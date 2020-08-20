@@ -116,7 +116,7 @@
       <AnchorPane fx:id="a2" layoutX="371.0" layoutY="124.0" prefHeight="210.0" prefWidth="282.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);" />
       <AnchorPane fx:id="a1" layoutX="59.0" layoutY="125.0" prefHeight="208.0" prefWidth="286.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);">
          <children>
-            <DatePicker fx:id="date_naissance" layoutX="113.0" layoutY="123.0" prefHeight="25.0" prefWidth="149.0" />
+            <DatePicker fx:id="date_naissance" layoutX="114.0" layoutY="123.0" prefHeight="25.0" prefWidth="149.0" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="a4" layoutX="376.0" layoutY="383.0" prefHeight="173.0" prefWidth="282.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);" />
@@ -134,27 +134,27 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </RadioButton>
-      <Label layoutX="68.0" layoutY="143.0" text="Matricule_etu">
+      <Label fx:id="l1" layoutX="68.0" layoutY="143.0" text="Matricule_etu">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="69.0" layoutY="178.0" text="Nom">
+      <Label fx:id="l2" layoutX="69.0" layoutY="178.0" text="Nom">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="70.0" layoutY="213.0" text="Prenom">
+      <Label fx:id="l3" layoutX="70.0" layoutY="213.0" text="Prenom">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="71.0" layoutY="250.0" text="date_naissance">
+      <Label fx:id="l4" layoutX="71.0" layoutY="250.0" text="date_naissance">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="72.0" layoutY="287.0" text="Addresse">
+      <Label fx:id="l5" layoutX="72.0" layoutY="287.0" text="Addresse">
          <font>
             <Font size="14.0" />
          </font>
@@ -169,27 +169,27 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </RadioButton>
-      <Label layoutX="386.0" layoutY="143.0" text="Matricule_etu">
+      <Label fx:id="l6" layoutX="386.0" layoutY="143.0" text="Matricule_etu">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="387.0" layoutY="178.0" text="Code_Unite">
+      <Label fx:id="l7" layoutX="387.0" layoutY="178.0" text="Code_Unite">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="388.0" layoutY="213.0" text="Note_CC">
+      <Label fx:id="l8" layoutX="388.0" layoutY="213.0" text="Note_CC">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="389.0" layoutY="250.0" text="Note_TP">
+      <Label fx:id="l9" layoutX="389.0" layoutY="250.0" text="Note_TP">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="390.0" layoutY="289.0" text="Note_Examen">
+      <Label fx:id="l10" layoutX="390.0" layoutY="289.0" text="Note_Examen">
          <font>
             <Font size="14.0" />
          </font>
@@ -202,17 +202,17 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </RadioButton>
-      <Label layoutX="71.0" layoutY="405.0" text="Matricule_Ens">
+      <Label fx:id="l11" layoutX="71.0" layoutY="405.0" text="Matricule_Ens">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="72.0" layoutY="440.0" text="Nom">
+      <Label fx:id="l12" layoutX="72.0" layoutY="440.0" text="Nom">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="73.0" layoutY="475.0" text="Prenom">
+      <Label fx:id="l13" layoutX="73.0" layoutY="475.0" text="Prenom">
          <font>
             <Font size="14.0" />
          </font>
@@ -226,22 +226,22 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </RadioButton>
-      <Label layoutX="387.0" layoutY="405.0" text="Code_Unite">
+      <Label fx:id="l14" layoutX="387.0" layoutY="405.0" text="Code_Unite">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="388.0" layoutY="440.0" text="Libelle">
+      <Label fx:id="l15" layoutX="388.0" layoutY="440.0" text="Libelle">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="389.0" layoutY="475.0" text="Nbr_Heurs">
+      <Label fx:id="l16" layoutX="389.0" layoutY="475.0" text="Nbr_Heurs">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="390.0" layoutY="512.0" text="Matricule_Ens">
+      <Label fx:id="l17" layoutX="390.0" layoutY="512.0" text="Matricule_Ens">
          <font>
             <Font size="14.0" />
          </font>
