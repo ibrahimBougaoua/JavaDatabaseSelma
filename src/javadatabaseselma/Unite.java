@@ -35,8 +35,8 @@ public class Unite {
     /**
      * @return the CODE_UNITE
      */
-    public SimpleStringProperty getCODE_UNITE() {
-        return CODE_UNITE;
+    public String getCODE_UNITE() {
+        return CODE_UNITE.get();
     }
 
     /**
@@ -49,8 +49,8 @@ public class Unite {
     /**
      * @return the LIBELLE
      */
-    public SimpleStringProperty getLIBELLE() {
-        return LIBELLE;
+    public String getLIBELLE() {
+        return LIBELLE.get();
     }
 
     /**
@@ -63,8 +63,8 @@ public class Unite {
     /**
      * @return the NBR_HEURES
      */
-    public SimpleIntegerProperty getNBR_HEURES() {
-        return NBR_HEURES;
+    public int getNBR_HEURES() {
+        return NBR_HEURES.get();
     }
 
     /**
@@ -77,8 +77,8 @@ public class Unite {
     /**
      * @return the MATRICULE_ENS
      */
-    public SimpleIntegerProperty getMATRICULE_ENS() {
-        return MATRICULE_ENS;
+    public int getMATRICULE_ENS() {
+        return MATRICULE_ENS.get();
     }
 
     /**
