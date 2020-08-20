@@ -33,8 +33,8 @@ public class Enseignant {
     /**
      * @return the MATRICULE_ENS
      */
-    public SimpleIntegerProperty getMATRICULE_ENS() {
-        return MATRICULE_ENS;
+    public int getMATRICULE_ENS() {
+        return MATRICULE_ENS.get();
     }
 
     /**
@@ -47,8 +47,8 @@ public class Enseignant {
     /**
      * @return the NOM_ENS
      */
-    public SimpleStringProperty getNOM_ENS() {
-        return NOM_ENS;
+    public String getNOM_ENS() {
+        return NOM_ENS.get();
     }
 
     /**
@@ -61,8 +61,8 @@ public class Enseignant {
     /**
      * @return the PRENOM_ENS
      */
-    public SimpleStringProperty getPRENOM_ENS() {
-        return PRENOM_ENS;
+    public String getPRENOM_ENS() {
+        return PRENOM_ENS.get();
     }
 
     /**
