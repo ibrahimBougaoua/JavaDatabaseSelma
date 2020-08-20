@@ -37,8 +37,8 @@ public class EtudiantUnite {
     /**
      * @return the MATRICULE_ETU
      */
-    public SimpleIntegerProperty getMATRICULE_ETU() {
-        return MATRICULE_ETU;
+    public int getMATRICULE_ETU() {
+        return MATRICULE_ETU.get();
     }
 
     /**
@@ -51,8 +51,8 @@ public class EtudiantUnite {
     /**
      * @return the CODE_UNITE
      */
-    public SimpleStringProperty getCODE_UNITE() {
-        return CODE_UNITE;
+    public String getCODE_UNITE() {
+        return CODE_UNITE.get();
     }
 
     /**
@@ -65,8 +65,8 @@ public class EtudiantUnite {
     /**
      * @return the NOTE_CC
      */
-    public SimpleIntegerProperty getNOTE_CC() {
-        return NOTE_CC;
+    public int getNOTE_CC() {
+        return NOTE_CC.get();
     }
 
     /**
@@ -79,8 +79,8 @@ public class EtudiantUnite {
     /**
      * @return the NOTE_TP
      */
-    public SimpleIntegerProperty getNOTE_TP() {
-        return NOTE_TP;
+    public int getNOTE_TP() {
+        return NOTE_TP.get();
     }
 
     /**
@@ -93,8 +93,8 @@ public class EtudiantUnite {
     /**
      * @return the NOTE_EXAMEN
      */
-    public SimpleIntegerProperty getNOTE_EXAMEN() {
-        return NOTE_EXAMEN;
+    public int getNOTE_EXAMEN() {
+        return NOTE_EXAMEN.get();
     }
 
     /**
