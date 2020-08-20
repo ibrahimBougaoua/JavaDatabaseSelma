@@ -26,7 +26,7 @@
             <TextField fx:id="Matricule_Ens" layoutX="143.0" layoutY="93.0" prefHeight="25.0" prefWidth="164.0" />
             <TextField fx:id="nom_ens" layoutX="143.0" layoutY="150.0" prefHeight="25.0" prefWidth="164.0" />
             <TextField fx:id="prenom_ens" layoutX="143.0" layoutY="207.0" prefHeight="25.0" prefWidth="164.0" />
-            <Label layoutX="37.0" layoutY="94.0" text="Matricule_Ens">
+            <Label layoutX="37.0" layoutY="94.0" text="Matricule Ens">
                <font>
                   <Font size="14.0" />
                </font>

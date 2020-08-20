@@ -138,7 +138,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </RadioButton>
-      <Label fx:id="l1" layoutX="68.0" layoutY="143.0" text="Matricule_etu">
+      <Label fx:id="l1" layoutX="68.0" layoutY="143.0" text="Matricule etu">
          <font>
             <Font size="14.0" />
          </font>
@@ -153,7 +153,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="l4" layoutX="71.0" layoutY="250.0" text="date_naissance">
+      <Label fx:id="l4" layoutX="71.0" layoutY="250.0" text="Date naissance">
          <font>
             <Font size="14.0" />
          </font>
@@ -173,27 +173,27 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </RadioButton>
-      <Label fx:id="l6" layoutX="386.0" layoutY="143.0" text="Matricule_etu">
+      <Label fx:id="l6" layoutX="386.0" layoutY="143.0" text="Matricule etu">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="l7" layoutX="387.0" layoutY="178.0" text="Code_Unite">
+      <Label fx:id="l7" layoutX="387.0" layoutY="178.0" text="Code Unite">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="l8" layoutX="388.0" layoutY="213.0" text="Note_CC">
+      <Label fx:id="l8" layoutX="388.0" layoutY="213.0" text="Note CC">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="l9" layoutX="389.0" layoutY="250.0" text="Note_TP">
+      <Label fx:id="l9" layoutX="389.0" layoutY="250.0" text="Note TP">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="l10" layoutX="390.0" layoutY="289.0" text="Note_Examen">
+      <Label fx:id="l10" layoutX="390.0" layoutY="289.0" text="Note Examen">
          <font>
             <Font size="14.0" />
          </font>
@@ -206,7 +206,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </RadioButton>
-      <Label fx:id="l11" layoutX="71.0" layoutY="405.0" text="Matricule_Ens">
+      <Label fx:id="l11" layoutX="71.0" layoutY="405.0" text="Matricule Ens">
          <font>
             <Font size="14.0" />
          </font>
@@ -230,7 +230,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </RadioButton>
-      <Label fx:id="l14" layoutX="387.0" layoutY="405.0" text="Code_Unite">
+      <Label fx:id="l14" layoutX="387.0" layoutY="405.0" text="Code Unite">
          <font>
             <Font size="14.0" />
          </font>
@@ -240,12 +240,12 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="l16" layoutX="389.0" layoutY="475.0" text="Nbr_Heurs">
+      <Label fx:id="l16" layoutX="389.0" layoutY="475.0" text="Nbr Heurs">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="l17" layoutX="390.0" layoutY="512.0" text="Matricule_Ens">
+      <Label fx:id="l17" layoutX="390.0" layoutY="512.0" text="Matricule Ens">
          <font>
             <Font size="14.0" />
          </font>
@@ -260,7 +260,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="return_to_login_page" layoutX="55.0" layoutY="579.0" mnemonicParsing="false" onAction="#backToLoginPage" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: #17a2b8;" text="Return to login page" textFill="WHITE">
+      <Button fx:id="return_to_login_page" layoutX="57.0" layoutY="579.0" mnemonicParsing="false" onAction="#backToLoginPage" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: #17a2b8;" text="Return to login page" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
