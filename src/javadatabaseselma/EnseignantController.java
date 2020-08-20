@@ -67,7 +67,7 @@ public class EnseignantController implements Initializable {
     Label result;
     
     @FXML
-    Label error;
+    Label errorValider;
     
     @FXML
     Button resetInsertEns;
@@ -89,11 +89,16 @@ public class EnseignantController implements Initializable {
     
     @FXML
     public void validerDataByMatricule(ActionEvent e) throws SQLException {
+        
         String sql = "SELECT * FROM enseignant where MATRICULE_ENS  = " + Integer.parseInt(getMatriculeField.getText());
         Connection connection = Database.getConnectionDb();
         PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
         ResultSet rs = preparedStatement.executeQuery(sql );
-        error.setText("");
+        
+        getMatriculeEns.setText("");
+        getNomEns.setText(""); 
+        getPrenomEns.setText("");
+        
         while (rs.next()) {
            getMatriculeEns.setText(rs.getString("MATRICULE_ENS").toString());
            getNomEns.setText(rs.getString("NOM_ENS").toString()); 
@@ -102,8 +107,8 @@ public class EnseignantController implements Initializable {
         
         if(getMatriculeEns.getText().equals(""))
         {
-            error.setText("Votre Matricule est faux ou n'existe pas");
-            error.setTextFill(Color.rgb(210, 39, 30));
+            errorValider.setText("Votre Matricule est faux ou n'existe pas");
+            errorValider.setTextFill(Color.rgb(210, 39, 30));
         }
     }
     

@@ -36,7 +36,10 @@
          </font></Button>
       <Label id="messageU" fx:id="messageU" layoutX="142.0" layoutY="158.0" prefHeight="17.0" prefWidth="157.0" />
       <Label id="messageP" fx:id="messageP" layoutX="142.0" layoutY="228.0" prefHeight="17.0" prefWidth="157.0" />
-      <Label id="messageE" fx:id="messageE" layoutX="130.0" layoutY="324.0" prefHeight="17.0" prefWidth="203.0" />
+      <Label id="messageE" fx:id="messageE" layoutX="125.0" layoutY="329.0" prefHeight="20.0" prefWidth="222.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
       <Button layoutX="51.0" layoutY="263.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #17a2b8;" text="Exit" textFill="WHITE">
          <font>
             <Font size="14.0" />
