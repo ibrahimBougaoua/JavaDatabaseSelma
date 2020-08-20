@@ -177,21 +177,7 @@ public class HomeController implements Initializable {
     @FXML
     RadioButton radio4;
     
-    ToggleGroup group1;
-    
-    @FXML
-    RadioButton cradio1;
-    
-    @FXML
-    RadioButton cradio2;
-   
-    @FXML
-    RadioButton cradio3;
-    
-    @FXML
-    RadioButton cradio4;
-    
-    ToggleGroup cgroup1;
+    ToggleGroup group1;    
 
     // using for etudiant table
     @FXML
@@ -614,16 +600,6 @@ public class HomeController implements Initializable {
         radio3.setToggleGroup(group1);
         radio4.setToggleGroup(group1);
         
-        cgroup1 = new ToggleGroup();
-        cradio1.setText("one");
-        cradio2.setText("tow");
-        cradio3.setText("three");
-        cradio4.setText("four");
-        cradio1.setToggleGroup(cgroup1);
-        cradio2.setToggleGroup(cgroup1);
-        cradio3.setToggleGroup(cgroup1);
-        cradio4.setToggleGroup(cgroup1);
-        
         //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
         etudiantMat.setCellValueFactory(new PropertyValueFactory<>("MATRICULE_ETU"));
         etudiantNom.setCellValueFactory(new PropertyValueFactory<>("NOM_ETU"));
@@ -687,7 +663,7 @@ public class HomeController implements Initializable {
         enseignantNomTable.setCellValueFactory(new PropertyValueFactory<>("NOM_ENS"));
         enseignantPrenomTable.setCellValueFactory(new PropertyValueFactory<>("PRENOM_ENS"));
         
-        etudiantData = FXCollections.observableArrayList();    
+        etudiantData = FXCollections.observableArrayList();   
     
         try {
         
