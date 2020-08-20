@@ -30,4 +30,46 @@ public class Enseignant {
         this.PRENOM_ENS = new SimpleStringProperty(PRENOM_ENS);;
     }
 
+    /**
+     * @return the MATRICULE_ENS
+     */
+    public SimpleIntegerProperty getMATRICULE_ENS() {
+        return MATRICULE_ENS;
+    }
+
+    /**
+     * @param MATRICULE_ENS the MATRICULE_ENS to set
+     */
+    public void setMATRICULE_ENS(SimpleIntegerProperty MATRICULE_ENS) {
+        this.MATRICULE_ENS = MATRICULE_ENS;
+    }
+
+    /**
+     * @return the NOM_ENS
+     */
+    public SimpleStringProperty getNOM_ENS() {
+        return NOM_ENS;
+    }
+
+    /**
+     * @param NOM_ENS the NOM_ENS to set
+     */
+    public void setNOM_ENS(SimpleStringProperty NOM_ENS) {
+        this.NOM_ENS = NOM_ENS;
+    }
+
+    /**
+     * @return the PRENOM_ENS
+     */
+    public SimpleStringProperty getPRENOM_ENS() {
+        return PRENOM_ENS;
+    }
+
+    /**
+     * @param PRENOM_ENS the PRENOM_ENS to set
+     */
+    public void setPRENOM_ENS(SimpleStringProperty PRENOM_ENS) {
+        this.PRENOM_ENS = PRENOM_ENS;
+    }
+
 }
