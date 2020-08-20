@@ -242,7 +242,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="retry" layoutX="358.0" layoutY="579.0" mnemonicParsing="false" onAction="#Retry" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #17a2b8;" text="Reset" textFill="WHITE">
+      <Button fx:id="reset" layoutX="358.0" layoutY="579.0" mnemonicParsing="false" onAction="#Retry" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #17a2b8;" text="Reset" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
@@ -252,7 +252,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="return_to_login_page" layoutX="55.0" layoutY="579.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="202.0" style="-fx-background-color: #17a2b8;" text="Return to login page" textFill="WHITE">
+      <Button fx:id="return_to_login_page" layoutX="55.0" layoutY="579.0" mnemonicParsing="false" onAction="#backToLoginPage" prefHeight="30.0" prefWidth="202.0" style="-fx-background-color: #17a2b8;" text="Return to login page" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>

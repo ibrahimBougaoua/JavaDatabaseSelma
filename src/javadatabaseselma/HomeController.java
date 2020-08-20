@@ -35,6 +35,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javadatabaseselma.Etudiant;
+import javafx.scene.SceneAntialiasing;
 
 
 /**
@@ -163,6 +164,9 @@ public class HomeController implements Initializable {
     Button insert;
     
     @FXML
+    Button return_to_login_page;
+    
+    @FXML
     Label messageR;
     
     @FXML
@@ -269,6 +273,20 @@ public class HomeController implements Initializable {
     libelle.setText("");
     nbr_heurs.setText("");
     Matricule_Ens_u.setText("");
+    }
+    
+    @FXML
+    public void backToLoginPage(ActionEvent event) throws IOException  {
+        Stage stage = (Stage) return_to_login_page.getScene().getWindow();
+        stage.close();
+        Stage login = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        //Scene scene = new Scene(root, 450, 300);
+        Scene scene = new Scene(root, -1, -1, true, SceneAntialiasing.BALANCED);
+        scene.getStylesheets().add(getClass().getResource("login.css").toExternalForm());
+        login.setTitle("Login");
+        login.setScene(scene);
+        login.show();
     }
     
     @FXML
