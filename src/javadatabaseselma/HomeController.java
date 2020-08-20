@@ -36,6 +36,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javadatabaseselma.Etudiant;
 import javafx.scene.SceneAntialiasing;
+import javafx.scene.control.DatePicker;
 
 
 /**
@@ -71,7 +72,7 @@ public class HomeController implements Initializable {
     Label messagePE;
     
     @FXML
-    TextField date_naissance;
+    DatePicker date_naissance;
     
     @FXML
     Label messageDE;
@@ -259,7 +260,7 @@ public class HomeController implements Initializable {
     Matricule_etu.setText("");
     nom_etu.setText("");
     prenom_etu.setText("");
-    date_naissance.setText("");
+    date_naissance.setValue(null);
     Addresse.setText("");
     Matricule_etu_unit.setText("");
     code_unit.setText("");
@@ -310,6 +311,8 @@ public class HomeController implements Initializable {
             Matricule_etu.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
             //messageME.setText("Matricule is empty !");
             //messageME.setTextFill(Color.rgb(210, 39, 30));
+        } else {
+            Matricule_etu.setStyle("-fx-text-box-border: #28a745; -fx-focus-color: #28a745;");
         }
         
         if(nom_etu.getText().equals(""))
@@ -317,6 +320,8 @@ public class HomeController implements Initializable {
             nom_etu.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
             //messageNE.setText("Nom is empty !");
             //messageNE.setTextFill(Color.rgb(210, 39, 30));
+        } else {
+            nom_etu.setStyle("-fx-text-box-border: #28a745; -fx-focus-color: #28a745;");
         }
         
         if(prenom_etu.getText().equals(""))
@@ -324,13 +329,17 @@ public class HomeController implements Initializable {
             prenom_etu.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
             //messagePE.setText("Prenome is empty !");
             //messagePE.setTextFill(Color.rgb(210, 39, 30));
+        } else {
+            prenom_etu.setStyle("-fx-text-box-border: #28a745; -fx-focus-color: #28a745;");
         }
         
-        if(date_naissance.getText().equals(""))
+        if(date_naissance.getValue().equals(null))
         {
             date_naissance.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
             //messageDE.setText("Date naissance is empty !");
             //messageDE.setTextFill(Color.rgb(210, 39, 30));
+        } else {
+            date_naissance.setStyle("-fx-text-box-border: #28a745; -fx-focus-color: #28a745;");
         }
         
         if(Addresse.getText().equals(""))
@@ -338,6 +347,8 @@ public class HomeController implements Initializable {
             Addresse.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
             //messageAE.setText("Addresse is empty !");
             //messageAE.setTextFill(Color.rgb(210, 39, 30));
+        } else {
+            Addresse.setStyle("-fx-text-box-border: #28a745; -fx-focus-color: #28a745;");
         }
         
         if(!Matricule_etu.getText().equals(""))
@@ -352,22 +363,22 @@ public class HomeController implements Initializable {
             }
            if(!nom_etu.getText().equals(""))
            {  
-               Matricule_etu.setStyle("-fx-text-box-border: #28a745; -fx-focus-color: #28a745;");
+               nom_etu.setStyle("-fx-text-box-border: #28a745; -fx-focus-color: #28a745;");
                 if(!prenom_etu.getText().equals(""))
                 {  
-                    Matricule_etu.setStyle("-fx-text-box-border: #28a745; -fx-focus-color: #28a745;");
-                    if(!date_naissance.getText().equals(""))
+                    prenom_etu.setStyle("-fx-text-box-border: #28a745; -fx-focus-color: #28a745;");
+                    if(!date_naissance.getValue().equals(null))
                     {  
-                        Matricule_etu.setStyle("-fx-text-box-border: #28a745; -fx-focus-color: #28a745;");
+                        date_naissance.setStyle("-fx-text-box-border: #28a745; -fx-focus-color: #28a745;");
                         if(!Addresse.getText().equals(""))
                         {  
-                            Matricule_etu.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
+                            Addresse.setStyle("-fx-text-box-border: #28a745; -fx-focus-color: #28a745;");
                             String sql = "INSERT INTO etudiant (MATRICULE_ETU,NOM_ETU,PRENOM_ETU,DATE_NAISSANCE,ADDRESSE) VALUES (?,?,?,?,?)";
                             PreparedStatement ps = (PreparedStatement) connection.prepareStatement(sql);
                             ps.setString(1, Matricule_etu.getText());
                             ps.setString(2, nom_etu.getText());
                             ps.setString(3, prenom_etu.getText());
-                            ps.setString(4, date_naissance.getText());
+                            ps.setString(4, date_naissance.getValue().toString());
                             ps.setString(5, Addresse.getText());
                             ps.executeUpdate();
                             //messageR.setText("Etudiant added successfully !");
