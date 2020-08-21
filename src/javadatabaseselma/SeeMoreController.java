@@ -115,23 +115,17 @@ public class SeeMoreController implements Initializable {
         
     }
     
-    
-    
     @FXML
     public void validerDataByLibelle(ActionEvent e) throws SQLException {
-        
-        boolean isNumeric = getMatriculeFieldLibelle.getText().chars().allMatch( Character::isDigit );
-        //getMatriculeFieldNote.setText("");
-
-        if(isNumeric)
+                
+        if(!getMatriculeFieldLibelle.getText().equals(""))
         {
-        
         //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
         tableNomLibelle.setCellValueFactory(new PropertyValueFactory<>("NOM_ETU"));
         tablePrenomLibelle.setCellValueFactory(new PropertyValueFactory<>("PRENOM_ETU"));
         
         LibelleData = FXCollections.observableArrayList();    
-    
+            
         try {
         
         Connection connection = Database.getConnectionDb();
@@ -150,19 +144,11 @@ public class SeeMoreController implements Initializable {
         }
                 
         tableByLibelle.setItems(LibelleData);
-            
+         
         } else {
-            getMatriculeFieldLibelle.setText("");
             getMatriculeFieldLibelle.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
             //errorValider.setTextFill(Color.rgb(210, 39, 30));
         }
-        
-        if(getMatriculeFieldLibelle.getText().equals(""))
-        {
-           getMatriculeFieldLibelle.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
-
-        }
-            
         
     }
     
