@@ -162,7 +162,7 @@ public class SeeMoreController implements Initializable {
         
         Connection connection = Database.getConnectionDb();
 
-        String sql = "select NOM_ETU,PRENOM_ETU from etudiant where MATRICULE_ETU not in (select MATRICULE_ETU from etudiantunite where CODE_UNITE in (select CODE_UNITE from unite where LIBELLE='" + getMatriculeFieldNote.getText() + "'))";
+        String sql = "select NOM_ETU,PRENOM_ETU from etudiant where MATRICULE_ETU not in (select MATRICULE_ETU from etudiantunite where CODE_UNITE in (select CODE_UNITE from unite where LIBELLE='" + getMatriculeFieldLibelle.getText() + "'))";
         
         PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
         ResultSet rs = preparedStatement.executeQuery(sql );
