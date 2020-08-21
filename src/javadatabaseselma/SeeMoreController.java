@@ -24,6 +24,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.paint.Color;
+import javadatabaseselma.JoinEtuEnsUnite;
 
 /**
  * FXML Controller class
@@ -79,6 +80,23 @@ public class SeeMoreController implements Initializable {
     TableColumn<Unite, String> tableColumnLibelleUnite; 
     
     private ObservableList<Unite> LibelleUniteData;
+    
+    @FXML
+    TableView<JoinEtuEnsUnite> tablejoinData;
+    
+    @FXML
+    TableColumn<JoinEtuEnsUnite, String> joinNom; 
+    
+    @FXML
+    TableColumn<JoinEtuEnsUnite, String> joinPrenom; 
+    
+    @FXML
+    TableColumn<JoinEtuEnsUnite, String> joinLibelle; 
+    
+    @FXML
+    TableColumn<JoinEtuEnsUnite, Integer> joinMoyenne;
+    
+    private ObservableList<JoinEtuEnsUnite> joinData;
     
     @FXML
     public void validerDataByNote(ActionEvent e) throws SQLException {
@@ -196,6 +214,35 @@ public class SeeMoreController implements Initializable {
         }
                 
         tableLibelleUnite.setItems(LibelleUniteData);
+        
+        
+        //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
+        joinNom.setCellValueFactory(new PropertyValueFactory<>("NOM_ETU"));
+        joinPrenom.setCellValueFactory(new PropertyValueFactory<>("PRENOM_ETU"));
+        joinLibelle.setCellValueFactory(new PropertyValueFactory<>("LIBELLE"));
+        joinMoyenne.setCellValueFactory(new PropertyValueFactory<>("moy"));
+
+        joinData = FXCollections.observableArrayList();    
+            
+        try {
+        
+        Connection connection = Database.getConnectionDb();
+
+        String sql = "select NOM_ETU,PRENOM_ETU,LIBELLE,((NOTE_CC+NOTE_TP+(NOTE_EXAMEN*2))/4) as MOY from etudiant,etudiantunite,unite where etudiant.MATRICULE_ETU =etudiantunite.MATRICULE_ETU  and etudiantunite.CODE_UNITE = unite.CODE_UNITE ";
+        
+        PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
+        ResultSet rs = preparedStatement.executeQuery(sql );
+        
+        while (rs.next()) {	
+                joinData.add(new JoinEtuEnsUnite(rs.getString("NOM_ETU"),rs.getString("PRENOM_ETU"),rs.getString("LIBELLE"),rs.getInt("MOY")));
+        }
+        
+        } catch (SQLException ex) {
+            Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                
+        tablejoinData.setItems(joinData);
+                
     }    
     
 }

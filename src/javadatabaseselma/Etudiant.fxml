@@ -14,9 +14,9 @@
    <children>
       <AnchorPane layoutX="31.0" layoutY="88.0" prefHeight="304.0" prefWidth="438.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);">
          <children>
-            <Button fx:id="backToLoginPage" layoutX="284.0" layoutY="262.0" mnemonicParsing="false" style="-fx-background-color: #17a2b8;" text="Return to login page" textFill="WHITE" />
+            <Button fx:id="backToLoginPage" layoutX="284.0" layoutY="262.0" mnemonicParsing="false" onAction="#backToLoginPage" style="-fx-background-color: #17a2b8;" text="Return to login page" textFill="WHITE" />
             <Label fx:id="errorValider" layoutX="40.0" layoutY="238.0" />
-            <Button fx:id="resetValiderEt" layoutX="40.0" layoutY="262.0" mnemonicParsing="false" style="-fx-background-color: #17a2b8;" text="Reset" textFill="WHITE" />
+            <Button fx:id="resetValiderEt" layoutX="40.0" layoutY="262.0" mnemonicParsing="false" onAction="#ResetValiderForm" style="-fx-background-color: #17a2b8;" text="Reset" textFill="WHITE" />
          </children>
       </AnchorPane>
       <TextField fx:id="getMatriculeField" layoutX="70.0" layoutY="159.0" prefHeight="27.0" prefWidth="307.0" />
@@ -61,7 +61,7 @@
          </font>
       </Label>
       <Button fx:id="Valider" layoutX="389.0" layoutY="159.0" mnemonicParsing="false" onAction="#validerDataByMatricule" style="-fx-background-color: #17a2b8;" text="Valider" textFill="WHITE" />
-      <Label layoutX="79.0" layoutY="21.0" text="Hi, welcome back to you'r account !" textFill="#17a2b8">
+      <Label layoutX="79.0" layoutY="30.0" text="Hi, welcome back to you'r account !" textFill="#17a2b8">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>

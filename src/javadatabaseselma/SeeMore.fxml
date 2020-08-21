@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="666.0" prefWidth="1184.0" style="-fx-background-color: #fff;" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="javadatabaseselma.SeeMoreController">
+<AnchorPane id="AnchorPane" prefHeight="666.0" prefWidth="1198.0" style="-fx-background-color: #fff;" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="javadatabaseselma.SeeMoreController">
     <stylesheets>
         <URL value="@seemore.css" />
     </stylesheets>
@@ -43,6 +43,19 @@
       <AnchorPane layoutX="605.0" layoutY="26.0" prefHeight="300.0" prefWidth="552.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);">
          <children>
             <AnchorPane prefHeight="44.0" prefWidth="552.0" style="-fx-background-color: #17a2b8;" />
+            <Label layoutX="17.0" layoutY="8.0" text="Tous les élèves avec leurs moyennes final de chaque module :" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tablejoinData" layoutX="15.0" layoutY="57.0" prefHeight="228.0" prefWidth="522.0">
+              <columns>
+                <TableColumn fx:id="joinNom" prefWidth="101.0" text="Nom" />
+                <TableColumn fx:id="joinPrenom" prefWidth="137.0" text="Prenom" />
+                  <TableColumn fx:id="joinLibelle" prefWidth="119.0" text="Libelle" />
+                  <TableColumn fx:id="joinMoyenne" prefWidth="163.0" text="Moyenne" />
+              </columns>
+            </TableView>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="605.0" layoutY="347.0" prefHeight="300.0" prefWidth="552.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);">

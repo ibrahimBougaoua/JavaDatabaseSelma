@@ -99,7 +99,7 @@
                   </Tab>
               </tabs>
             </TabPane>
-            <Button fx:id="seeMore" layoutX="20.0" layoutY="556.0" mnemonicParsing="false" onAction="#goToSeeMorePage" prefHeight="30.0" prefWidth="143.0" style="-fx-background-color: #17a2b8;" text="Voir plus de détails" textFill="WHITE">
+            <Button fx:id="seeMore" layoutX="428.0" layoutY="556.0" mnemonicParsing="false" onAction="#goToSeeMorePage" prefHeight="30.0" prefWidth="143.0" style="-fx-background-color: #17a2b8;" text="Voir plus de détails" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
