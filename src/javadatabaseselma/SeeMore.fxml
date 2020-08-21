@@ -30,17 +30,14 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TableView layoutX="10.0" layoutY="98.0" prefHeight="184.0" prefWidth="509.0">
+            <TableView fx:id="tableByNoteExam" layoutX="10.0" layoutY="98.0" prefHeight="184.0" prefWidth="509.0">
               <columns>
                 <TableColumn fx:id="tableNomNote" prefWidth="233.0" text="Nom" />
                 <TableColumn fx:id="tablePrenomNote" prefWidth="275.0" text="Prenom" />
               </columns>
             </TableView>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="40.0" layoutY="346.0" prefHeight="300.0" prefWidth="536.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);">
-         <children>
-            <AnchorPane prefHeight="44.0" prefWidth="538.0" style="-fx-background-color: #17a2b8;" />
+            <TextField fx:id="getMatriculeFieldNote" layoutX="236.0" layoutY="60.0" prefHeight="27.0" prefWidth="219.0" />
+            <Button fx:id="noteValider" layoutX="465.0" layoutY="61.0" mnemonicParsing="false" onAction="#validerDataByNote" style="-fx-background-color: #17a2b8;" text="Valider" textFill="WHITE" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="605.0" layoutY="26.0" prefHeight="300.0" prefWidth="552.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);">
@@ -53,7 +50,31 @@
             <AnchorPane prefHeight="44.0" prefWidth="552.0" style="-fx-background-color: #17a2b8;" />
          </children>
       </AnchorPane>
-      <TextField fx:id="getMatriculeFieldNote" layoutX="273.0" layoutY="82.0" prefHeight="27.0" prefWidth="219.0" />
-      <Button fx:id="noteValider" layoutX="504.0" layoutY="82.0" mnemonicParsing="false" onAction="#validerDataByMatricule" style="-fx-background-color: #17a2b8;" text="Valider" textFill="WHITE" />
+      <AnchorPane layoutX="38.0" layoutY="348.0" prefHeight="300.0" prefWidth="538.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);">
+         <children>
+            <AnchorPane prefHeight="44.0" prefWidth="538.0" style="-fx-background-color: #17a2b8;">
+               <children>
+                  <Label layoutX="11.0" layoutY="8.0" text="Afficher les élèves par note examen :" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label layoutX="10.0" layoutY="61.0" text="Afficher les élèves par note examen" textFill="#17a2b8">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tableByLibelle" layoutX="10.0" layoutY="98.0" prefHeight="184.0" prefWidth="509.0">
+               <columns>
+                  <TableColumn fx:id="tableNomLibelle" prefWidth="233.0" text="Nom" />
+                  <TableColumn fx:id="tablePrenomLibelle" prefWidth="275.0" text="Prenom" />
+               </columns>
+            </TableView>
+            <TextField fx:id="getMatriculeFieldLibelle" layoutX="233.0" layoutY="59.0" prefHeight="27.0" prefWidth="219.0" />
+            <Button fx:id="LibelleValider" layoutX="464.0" layoutY="59.0" mnemonicParsing="false" onAction="#validerDataByLibelle" style="-fx-background-color: #17a2b8;" text="Valider" textFill="WHITE" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

@@ -5,9 +5,25 @@
  */
 package javadatabaseselma;
 
+import com.mysql.jdbc.PreparedStatement;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.paint.Color;
 
 /**
  * FXML Controller class
@@ -16,6 +32,140 @@ import javafx.fxml.Initializable;
  */
 public class SeeMoreController implements Initializable {
 
+    @FXML
+    TextField getMatriculeFieldNote;
+    
+    @FXML
+    Button noteValider;
+    
+    @FXML
+    TableView<Etudiant> tableByNoteExam;
+    
+    @FXML
+    TableColumn<Etudiant, String> tableNomNote;
+    
+    @FXML
+    TableColumn<Etudiant, String> tablePrenomNote; 
+    
+    private ObservableList<Etudiant> noteExamData;
+    
+    @FXML
+    TextField getMatriculeFieldLibelle;
+    
+    @FXML
+    Button LibelleValider;
+    
+    @FXML
+    TableView<Etudiant> tableByLibelle;
+    
+    @FXML
+    TableColumn<Etudiant, String> tableNomLibelle;
+    
+    @FXML
+    TableColumn<Etudiant, String> tablePrenomLibelle; 
+    
+    private ObservableList<Etudiant> LibelleData;
+
+    @FXML
+    public void validerDataByNote(ActionEvent e) throws SQLException {
+        
+        boolean isNumeric = getMatriculeFieldNote.getText().chars().allMatch( Character::isDigit );
+        //getMatriculeFieldNote.setText("");
+
+        if(isNumeric)
+        {
+        
+        //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
+        tableNomNote.setCellValueFactory(new PropertyValueFactory<>("NOM_ETU"));
+        tablePrenomNote.setCellValueFactory(new PropertyValueFactory<>("PRENOM_ETU"));
+        
+        noteExamData = FXCollections.observableArrayList();    
+    
+        try {
+        
+        Connection connection = Database.getConnectionDb();
+            
+        String sql = "select NOM_ETU,PRENOM_ETU from etudiant where MATRICULE_ETU in(select MATRICULE_ETU from etudiantunite where NOTE_EXAMEN=" + Integer.parseInt(getMatriculeFieldNote.getText()) + ")";
+        
+        PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
+        ResultSet rs = preparedStatement.executeQuery(sql );
+        
+        while (rs.next()) {	
+                noteExamData.add(new Etudiant(rs.getString("NOM_ETU"),rs.getString("PRENOM_ETU")));
+        }
+        
+        } catch (SQLException ex) {
+            Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                
+        tableByNoteExam.setItems(noteExamData);
+            
+        } else {
+            getMatriculeFieldNote.setText("");
+            getMatriculeFieldNote.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
+            //errorValider.setTextFill(Color.rgb(210, 39, 30));
+        }
+        
+        if(getMatriculeFieldNote.getText().equals(""))
+        {
+           getMatriculeFieldNote.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
+
+        }
+            
+        
+    }
+    
+    
+    
+    @FXML
+    public void validerDataByLibelle(ActionEvent e) throws SQLException {
+        
+        boolean isNumeric = getMatriculeFieldLibelle.getText().chars().allMatch( Character::isDigit );
+        //getMatriculeFieldNote.setText("");
+
+        if(isNumeric)
+        {
+        
+        //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
+        tableNomLibelle.setCellValueFactory(new PropertyValueFactory<>("NOM_ETU"));
+        tablePrenomLibelle.setCellValueFactory(new PropertyValueFactory<>("PRENOM_ETU"));
+        
+        LibelleData = FXCollections.observableArrayList();    
+    
+        try {
+        
+        Connection connection = Database.getConnectionDb();
+
+        String sql = "select NOM_ETU,PRENOM_ETU from etudiant where MATRICULE_ETU not in (select MATRICULE_ETU from etudiantunite where CODE_UNITE in (select CODE_UNITE from unite where LIBELLE='" + getMatriculeFieldNote.getText() + "'))";
+        
+        PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
+        ResultSet rs = preparedStatement.executeQuery(sql );
+        
+        while (rs.next()) {	
+                LibelleData.add(new Etudiant(rs.getString("NOM_ETU"),rs.getString("PRENOM_ETU")));
+        }
+        
+        } catch (SQLException ex) {
+            Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                
+        tableByLibelle.setItems(LibelleData);
+            
+        } else {
+            getMatriculeFieldLibelle.setText("");
+            getMatriculeFieldLibelle.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
+            //errorValider.setTextFill(Color.rgb(210, 39, 30));
+        }
+        
+        if(getMatriculeFieldLibelle.getText().equals(""))
+        {
+           getMatriculeFieldLibelle.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
+
+        }
+            
+        
+    }
+    
     /**
      * Initializes the controller class.
      */
