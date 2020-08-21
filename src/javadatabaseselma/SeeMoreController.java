@@ -67,6 +67,20 @@ public class SeeMoreController implements Initializable {
     private ObservableList<Etudiant> LibelleData;
 
     @FXML
+    TextField getMatriculeFieldLibelleUnite;
+    
+    @FXML
+    Button LibelleUniteValider;
+    
+    @FXML
+    TableView<Etudiant> tableLibelleUnite;
+    
+    @FXML
+    TableColumn<Etudiant, String> tableColumnLibelleUnite; 
+    
+    private ObservableList<Etudiant> LibelleUniteData;
+    
+    @FXML
     public void validerDataByNote(ActionEvent e) throws SQLException {
         
         boolean isNumeric = getMatriculeFieldNote.getText().chars().allMatch( Character::isDigit );
@@ -158,7 +172,7 @@ public class SeeMoreController implements Initializable {
         if(!getMatriculeFieldLibelleUnite.getText().equals(""))
         {
         //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
-        tableNomLibelleUnite.setCellValueFactory(new PropertyValueFactory<>("NOM_ETU"));
+        tableLibelleUnite.setCellValueFactory(new PropertyValueFactory<>("NOM_ETU"));
         
         LibelleUniteData = FXCollections.observableArrayList();    
             
@@ -179,7 +193,7 @@ public class SeeMoreController implements Initializable {
             Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
         }
                 
-        tableByLibelleUnite.setItems(LibelleUniteData);
+        tableLibelleUnite.setItems(LibelleUniteData);
          
         } else {
             getMatriculeFieldLibelleUnite.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
