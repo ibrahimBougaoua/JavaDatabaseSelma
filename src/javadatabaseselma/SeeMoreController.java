@@ -168,9 +168,7 @@ public class SeeMoreController implements Initializable {
     
     @FXML
     public void validerDataByLibelleUnite(ActionEvent e) throws SQLException {
-                
-        if(!getMatriculeFieldLibelleUnite.getText().equals(""))
-        {
+            
         //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
         tableColumnLibelleUnite.setCellValueFactory(new PropertyValueFactory<>("LIBELLE"));
 
@@ -180,7 +178,7 @@ public class SeeMoreController implements Initializable {
         
         Connection connection = Database.getConnectionDb();
 
-        String sql = "select NOM_ETU,PRENOM_ETU from etudiant where MATRICULE_ETU not in (select MATRICULE_ETU from etudiantunite where CODE_UNITE in (select CODE_UNITE from unite where LIBELLE='" + getMatriculeFieldNote.getText() + "'))";
+        String sql = "select LIBELLE from unite where CODE_UNITE not in (select CODE_UNITE from etudiantunite)";
         
         PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
         ResultSet rs = preparedStatement.executeQuery(sql );
@@ -195,10 +193,6 @@ public class SeeMoreController implements Initializable {
                 
         tableLibelleUnite.setItems(LibelleUniteData);
          
-        } else {
-            getMatriculeFieldLibelleUnite.setStyle("-fx-text-box-border: #dc3545; -fx-focus-color: #dc3545;");
-            //errorValider.setTextFill(Color.rgb(210, 39, 30));
-        }
         
     }
     
