@@ -25,6 +25,12 @@ public class Etudiant {
         
     }
     
+    public Etudiant(String NOM_ETU,String PRENOM_ETU)
+    {
+        this.NOM_ETU = new SimpleStringProperty(NOM_ETU);
+        this.PRENOM_ETU = new SimpleStringProperty(PRENOM_ETU);
+    }
+    
     public Etudiant(int MATRICULE_ETU,String NOM_ETU,String PRENOM_ETU,String DATE_NAISSANCE,String ADDRESSE)
     {
         this.MATRICULE_ETU = new SimpleIntegerProperty(MATRICULE_ETU);

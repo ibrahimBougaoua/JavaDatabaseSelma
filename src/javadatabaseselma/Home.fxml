@@ -30,13 +30,13 @@
                   </Label>
                </children>
             </AnchorPane>
-            <TabPane layoutX="19.0" layoutY="72.0" prefHeight="521.0" prefWidth="553.0" style="-fx-background-color: #fff;" tabClosingPolicy="UNAVAILABLE">
+            <TabPane layoutX="19.0" layoutY="72.0" prefHeight="466.0" prefWidth="553.0" style="-fx-background-color: #fff;" tabClosingPolicy="UNAVAILABLE">
               <tabs>
                 <Tab fx:id="consultEtu" text="Etudiant">
                      <content>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <TableView fx:id="etudiantTable" prefHeight="481.0" prefWidth="553.0">
+                              <TableView fx:id="etudiantTable" prefHeight="435.0" prefWidth="553.0">
                                 <columns>
                                   <TableColumn fx:id="etudiantMat" prefWidth="118.0" text="Matricule_etu" />
                                   <TableColumn fx:id="etudiantNom" prefWidth="97.0" text="Nom" />
@@ -53,7 +53,7 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TableView fx:id="etudiantUnit" prefHeight="482.0" prefWidth="553.0">
+                              <TableView fx:id="etudiantUnit" prefHeight="435.0" prefWidth="553.0">
                                 <columns>
                                   <TableColumn fx:id="etudiantUnitMatEtu" prefWidth="133.0" text="Matricule_etu" />
                                   <TableColumn fx:id="etudiantUnitCode" prefWidth="94.0" text="Code_Unite" />
@@ -70,7 +70,7 @@
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TableView fx:id="enseignant" prefHeight="482.0" prefWidth="553.0">
+                              <TableView fx:id="enseignant" prefHeight="435.0" prefWidth="553.0">
                                 <columns>
                                   <TableColumn fx:id="enseignantMatTable" prefWidth="194.0" text="Matricule_Ens" />
                                   <TableColumn fx:id="enseignantNomTable" minWidth="0.0" prefWidth="151.0" text="Nom" />
@@ -83,9 +83,9 @@
                   </Tab>
                   <Tab text="Unite">
                      <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="435.0" prefWidth="553.0">
                            <children>
-                              <TableView fx:id="unite" prefHeight="485.0" prefWidth="553.0">
+                              <TableView fx:id="unite" prefHeight="435.0" prefWidth="553.0">
                                 <columns>
                                   <TableColumn fx:id="uniteCu" prefWidth="138.0" text="Code_Unite" />
                                   <TableColumn fx:id="uniteLb" prefWidth="122.0" text="Libelle" />
@@ -99,6 +99,11 @@
                   </Tab>
               </tabs>
             </TabPane>
+            <Button fx:id="seeMore" layoutX="20.0" layoutY="556.0" mnemonicParsing="false" onAction="#goToSeeMorePage" prefHeight="30.0" prefWidth="143.0" style="-fx-background-color: #17a2b8;" text="Voir plus de détails" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="23.0" layoutY="20.0" prefHeight="606.0" prefWidth="656.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);">

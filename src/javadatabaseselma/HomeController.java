@@ -347,6 +347,18 @@ public class HomeController implements Initializable {
     }
     
     @FXML
+    public void goToSeeMorePage(ActionEvent event) throws IOException  {
+        Stage seeMore = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("SeeMore.fxml"));
+        //Scene scene = new Scene(root, 450, 300);
+        Scene scene = new Scene(root, -1, -1, true, SceneAntialiasing.BALANCED);
+        scene.getStylesheets().add(getClass().getResource("seemore.css").toExternalForm());
+        seeMore.setTitle("voir plus de détails");
+        seeMore.setScene(scene);
+        seeMore.show();
+    }
+    
+    @FXML
     public void AddEtudiant(ActionEvent e) throws SQLException {
         
         Connection connection = Database.getConnectionDb();
