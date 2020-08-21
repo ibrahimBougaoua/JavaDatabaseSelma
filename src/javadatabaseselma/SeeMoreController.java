@@ -73,12 +73,12 @@ public class SeeMoreController implements Initializable {
     Button LibelleUniteValider;
     
     @FXML
-    TableView<Etudiant> tableLibelleUnite;
+    TableView<Unite> tableLibelleUnite;
     
     @FXML
-    TableColumn<Etudiant, String> tableColumnLibelleUnite; 
+    TableColumn<Unite, String> tableColumnLibelleUnite; 
     
-    private ObservableList<Etudiant> LibelleUniteData;
+    private ObservableList<Unite> LibelleUniteData;
     
     @FXML
     public void validerDataByNote(ActionEvent e) throws SQLException {
@@ -172,8 +172,8 @@ public class SeeMoreController implements Initializable {
         if(!getMatriculeFieldLibelleUnite.getText().equals(""))
         {
         //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
-        tableLibelleUnite.setCellValueFactory(new PropertyValueFactory<>("NOM_ETU"));
-        
+        tableColumnLibelleUnite.setCellValueFactory(new PropertyValueFactory<>("LIBELLE"));
+
         LibelleUniteData = FXCollections.observableArrayList();    
             
         try {
@@ -186,7 +186,7 @@ public class SeeMoreController implements Initializable {
         ResultSet rs = preparedStatement.executeQuery(sql );
         
         while (rs.next()) {	
-                LibelleUniteData.add(new Etudiant(rs.getString("NOM_ETU"),rs.getString("PRENOM_ETU")));
+                LibelleUniteData.add(new Unite(rs.getString("LIBELLE")));
         }
         
         } catch (SQLException ex) {

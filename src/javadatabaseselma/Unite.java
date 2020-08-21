@@ -24,6 +24,11 @@ public class Unite {
         
     }
     
+    public Unite(String LIBELLE)
+    {
+        this.LIBELLE = new SimpleStringProperty(LIBELLE);
+    }
+    
     public Unite(String CODE_UNITE ,String LIBELLE,int NBR_HEURES,int MATRICULE_ENS)
     {
         this.CODE_UNITE = new SimpleStringProperty(CODE_UNITE);

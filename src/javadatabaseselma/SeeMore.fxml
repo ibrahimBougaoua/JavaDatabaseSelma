@@ -47,7 +47,27 @@
       </AnchorPane>
       <AnchorPane layoutX="605.0" layoutY="347.0" prefHeight="300.0" prefWidth="552.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);">
          <children>
-            <AnchorPane prefHeight="44.0" prefWidth="552.0" style="-fx-background-color: #17a2b8;" />
+            <AnchorPane prefHeight="44.0" prefWidth="552.0" style="-fx-background-color: #17a2b8;">
+               <children>
+                  <Label layoutX="8.0" layoutY="7.0" text="Afficher les élèves qui n'a pas inscrit dans ce module :" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label layoutX="24.0" layoutY="62.0" text="les élèves qui n'a pas inscrit dans ce module" textFill="#17a2b8">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="getMatriculeFieldLibelleUnite" layoutX="301.0" layoutY="60.0" prefHeight="27.0" prefWidth="167.0" />
+            <Button fx:id="LibelleUniteValider" layoutX="476.0" layoutY="60.0" mnemonicParsing="false" onAction="#validerDataByLibelleUnite" style="-fx-background-color: #17a2b8;" text="Valider" textFill="WHITE" />
+            <TableView fx:id="tableLibelleUnite" layoutX="20.0" layoutY="100.0" prefHeight="184.0" prefWidth="509.0">
+               <columns>
+                  <TableColumn fx:id="tableColumnLibelleUnite" prefWidth="508.0" text="Libelle" />
+               </columns>
+            </TableView>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="38.0" layoutY="348.0" prefHeight="300.0" prefWidth="538.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, #ccc, 10, 0, 0, 0);">
