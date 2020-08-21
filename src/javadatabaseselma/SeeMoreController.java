@@ -166,9 +166,13 @@ public class SeeMoreController implements Initializable {
         
     }
     
-    @FXML
-    public void validerDataByLibelleUnite(ActionEvent e) throws SQLException {
-            
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+        
         //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
         tableColumnLibelleUnite.setCellValueFactory(new PropertyValueFactory<>("LIBELLE"));
 
@@ -192,16 +196,6 @@ public class SeeMoreController implements Initializable {
         }
                 
         tableLibelleUnite.setItems(LibelleUniteData);
-         
-        
-    }
-    
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
     }    
     
 }
