@@ -814,9 +814,20 @@ public class HomeController implements Initializable {
         return rs.next();
     }
     
-    public {
     
-    
+    public void getDataFromEtudiantTable()
+    {
+        
+                //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
+        etudiantMat.setCellValueFactory(new PropertyValueFactory<>("MATRICULE_ETU"));
+        etudiantNom.setCellValueFactory(new PropertyValueFactory<>("NOM_ETU"));
+        etudiantPrenom.setCellValueFactory(new PropertyValueFactory<>("PRENOM_ETU"));
+        etudiantDn.setCellValueFactory(new PropertyValueFactory<>("DATE_NAISSANCE"));
+        etudiantAd.setCellValueFactory(new PropertyValueFactory<>("ADDRESSE"));
+        
+        data = FXCollections.observableArrayList();
+
+        Connection connection;
         try {
         
         connection = Database.getConnectionDb();
@@ -835,16 +846,7 @@ public class HomeController implements Initializable {
         }
                 
         etudiantTable.setItems(data);
-         
-        //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
-        etudiantUnitMatEtu.setCellValueFactory(new PropertyValueFactory<>("MATRICULE_ETU"));
-        etudiantUnitCode.setCellValueFactory(new PropertyValueFactory<>("CODE_UNITE"));
-        etudiantUnitNoteCc.setCellValueFactory(new PropertyValueFactory<>("NOTE_CC"));
-        etudiantUnitNoteTp.setCellValueFactory(new PropertyValueFactory<>("NOTE_TP"));
-        etudiantUnitNoteExamen.setCellValueFactory(new PropertyValueFactory<>("NOTE_EXAMEN"));
-        
-        etudiantUnitData = FXCollections.observableArrayList();
-    
+
     }
     
     /**
@@ -863,14 +865,16 @@ public class HomeController implements Initializable {
         radio3.setToggleGroup(group1);
         radio4.setToggleGroup(group1);
         
-        //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
-        etudiantMat.setCellValueFactory(new PropertyValueFactory<>("MATRICULE_ETU"));
-        etudiantNom.setCellValueFactory(new PropertyValueFactory<>("NOM_ETU"));
-        etudiantPrenom.setCellValueFactory(new PropertyValueFactory<>("PRENOM_ETU"));
-        etudiantDn.setCellValueFactory(new PropertyValueFactory<>("DATE_NAISSANCE"));
-        etudiantAd.setCellValueFactory(new PropertyValueFactory<>("ADDRESSE"));
+        getDataFromEtudiantTable();                 
         
-        data = FXCollections.observableArrayList();
+        //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
+        etudiantUnitMatEtu.setCellValueFactory(new PropertyValueFactory<>("MATRICULE_ETU"));
+        etudiantUnitCode.setCellValueFactory(new PropertyValueFactory<>("CODE_UNITE"));
+        etudiantUnitNoteCc.setCellValueFactory(new PropertyValueFactory<>("NOTE_CC"));
+        etudiantUnitNoteTp.setCellValueFactory(new PropertyValueFactory<>("NOTE_TP"));
+        etudiantUnitNoteExamen.setCellValueFactory(new PropertyValueFactory<>("NOTE_EXAMEN"));
+        
+        etudiantUnitData = FXCollections.observableArrayList();
 
         Connection connection;
         
