@@ -23,6 +23,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.SceneAntialiasing;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
@@ -186,6 +188,11 @@ public class EnseignantController implements Initializable {
                     ps.executeUpdate();
                     result.setText("Enseignant added successfully !");
                     result.setTextFill(Color.GREEN);
+                    Alert alert = new Alert(AlertType.INFORMATION);
+                    alert.setTitle("Enseignant ajouté avec succès! !");
+                    alert.setHeaderText("les information de Enseignant");
+                    alert.setContentText("Matrcule : " + Matricule_Ens.getText() + "\nNom : " + nom_ens.getText() + "\nPrenom : " + prenom_ens.getText());
+                    alert.showAndWait();
                 }
             }
            
