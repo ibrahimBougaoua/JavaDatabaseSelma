@@ -539,7 +539,7 @@ public class HomeController implements Initializable {
                             Alert alert = new Alert(Alert.AlertType.INFORMATION);
                             alert.setTitle("Etudiant ajouté avec succès! !");
                             alert.setHeaderText("les information de Etudiant");
-                            alert.setContentText("Matrcule : " + Matricule_etu.getText() + "\nNom : " + nom_etu.getText() + "\nPrenom : " + prenom_etu.getText() + "\nDate naissance : " + date_naissance.getText().toString());
+                            alert.setContentText("Matrcule : " + Matricule_etu.getText() + "\nNom : " + nom_etu.getText() + "\nPrenom : " + prenom_etu.getText() + "\nDate naissance : " + date_naissance.getValue().toString());
                             alert.showAndWait();
                         }
                     }
@@ -620,6 +620,11 @@ public class HomeController implements Initializable {
                             ps.executeUpdate();
                             insertResult2.setText("Etudiant unite added successfully !");
                             insertResult2.setTextFill(Color.GREEN);
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Etudiant unite ajouté avec succès! !");
+                            alert.setHeaderText("les information de Etudiant unite");
+                            alert.setContentText("Matrcule : " + Matricule_etu_unit.getText() + "\nNote cc : " + note_cc.getText() + "\nNote Tp : " + note_tp.getText() + "\nNote examen : " + note_examen.getText());
+                            alert.showAndWait();
                         }
                     }
                 }
@@ -680,6 +685,11 @@ public class HomeController implements Initializable {
                     ps.executeUpdate();
                     insertResult3.setText("Enseignant added successfully !");
                     insertResult3.setTextFill(Color.GREEN);
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Enseignant ajouté avec succès! !");
+                    alert.setHeaderText("les information de Enseignant");
+                    alert.setContentText("Matrcule : " + Matricule_Ens.getText() + "\nNom : " + nom_ens.getText() + "\nPrenom : " + prenom_ens.getText());
+                    alert.showAndWait();
                 }
             }
         }
@@ -746,6 +756,11 @@ public class HomeController implements Initializable {
                             ps.executeUpdate();
                             insertResult4.setText("Unite added successfully !");
                             insertResult4.setTextFill(Color.GREEN);
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Unite ajouté avec succès! !");
+                            alert.setHeaderText("les information de unite");
+                            alert.setContentText("Code unite : " + code_unit_u.getText() + "\nLibelle : " + libelle.getText() + "\nNbr heurs : " + nbr_heurs.getText() + "\n Matricule Ens : " + Matricule_Ens_u.getText());
+                            alert.showAndWait();
                     }
                 }
             }
@@ -799,32 +814,9 @@ public class HomeController implements Initializable {
         return rs.next();
     }
     
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        group1 = new ToggleGroup();
-        radio1.setText("Etudiant");
-        radio2.setText("EtudiantUnite");
-        radio3.setText("Enseignant");
-        radio4.setText("Unite");
-        radio1.setToggleGroup(group1);
-        radio2.setToggleGroup(group1);
-        radio3.setToggleGroup(group1);
-        radio4.setToggleGroup(group1);
-        
-        //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
-        etudiantMat.setCellValueFactory(new PropertyValueFactory<>("MATRICULE_ETU"));
-        etudiantNom.setCellValueFactory(new PropertyValueFactory<>("NOM_ETU"));
-        etudiantPrenom.setCellValueFactory(new PropertyValueFactory<>("PRENOM_ETU"));
-        etudiantDn.setCellValueFactory(new PropertyValueFactory<>("DATE_NAISSANCE"));
-        etudiantAd.setCellValueFactory(new PropertyValueFactory<>("ADDRESSE"));
-        
-        data = FXCollections.observableArrayList();
-
-        Connection connection;
+    public {
+    
+    
         try {
         
         connection = Database.getConnectionDb();
@@ -852,6 +844,35 @@ public class HomeController implements Initializable {
         etudiantUnitNoteExamen.setCellValueFactory(new PropertyValueFactory<>("NOTE_EXAMEN"));
         
         etudiantUnitData = FXCollections.observableArrayList();
+    
+    }
+    
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+        group1 = new ToggleGroup();
+        radio1.setText("Etudiant");
+        radio2.setText("EtudiantUnite");
+        radio3.setText("Enseignant");
+        radio4.setText("Unite");
+        radio1.setToggleGroup(group1);
+        radio2.setToggleGroup(group1);
+        radio3.setToggleGroup(group1);
+        radio4.setToggleGroup(group1);
+        
+        //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
+        etudiantMat.setCellValueFactory(new PropertyValueFactory<>("MATRICULE_ETU"));
+        etudiantNom.setCellValueFactory(new PropertyValueFactory<>("NOM_ETU"));
+        etudiantPrenom.setCellValueFactory(new PropertyValueFactory<>("PRENOM_ETU"));
+        etudiantDn.setCellValueFactory(new PropertyValueFactory<>("DATE_NAISSANCE"));
+        etudiantAd.setCellValueFactory(new PropertyValueFactory<>("ADDRESSE"));
+        
+        data = FXCollections.observableArrayList();
+
+        Connection connection;
         
         try {
         
