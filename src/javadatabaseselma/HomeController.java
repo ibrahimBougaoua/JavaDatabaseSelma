@@ -50,7 +50,7 @@ public class HomeController implements Initializable {
 
     private ObservableList<Etudiant> data;
     private ObservableList<EtudiantUnite> etudiantUnitData;
-    private ObservableList<Enseignant> etudiantData;
+    private ObservableList<Enseignant> enseignantData;
     private ObservableList<Unite> uniteData;
 
     // etudiant fields
@@ -534,6 +534,7 @@ public class HomeController implements Initializable {
                             ps.setString(4, date_naissance.getValue().toString());
                             ps.setString(5, Addresse.getText());
                             ps.executeUpdate();
+                            getDataFromEtudiantTable();
                             insertResult1.setText("Etudiant added successfully !");
                             insertResult1.setTextFill(Color.GREEN);
                             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -618,6 +619,7 @@ public class HomeController implements Initializable {
                             ps.setInt(4, Integer.parseInt(note_tp.getText()));
                             ps.setInt(5, Integer.parseInt(note_examen.getText()));
                             ps.executeUpdate();
+                            getDataFromEtudiantUniteTable(); 
                             insertResult2.setText("Etudiant unite added successfully !");
                             insertResult2.setTextFill(Color.GREEN);
                             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -683,6 +685,7 @@ public class HomeController implements Initializable {
                     ps.setString(2, nom_ens.getText());
                     ps.setString(3, prenom_ens.getText());
                     ps.executeUpdate();
+                    getDataFromEnseignantTable(); 
                     insertResult3.setText("Enseignant added successfully !");
                     insertResult3.setTextFill(Color.GREEN);
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -754,6 +757,7 @@ public class HomeController implements Initializable {
                             ps.setInt(3, Integer.parseInt(nbr_heurs.getText()));
                             ps.setInt(4, Integer.parseInt(Matricule_Ens_u.getText()));
                             ps.executeUpdate();
+                            getDataFromEnseignantUniteTable();
                             insertResult4.setText("Unite added successfully !");
                             insertResult4.setTextFill(Color.GREEN);
                             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -849,24 +853,9 @@ public class HomeController implements Initializable {
 
     }
     
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        group1 = new ToggleGroup();
-        radio1.setText("Etudiant");
-        radio2.setText("EtudiantUnite");
-        radio3.setText("Enseignant");
-        radio4.setText("Unite");
-        radio1.setToggleGroup(group1);
-        radio2.setToggleGroup(group1);
-        radio3.setToggleGroup(group1);
-        radio4.setToggleGroup(group1);
-        
-        getDataFromEtudiantTable();                 
-        
+    
+    public void getDataFromEtudiantUniteTable()
+    {
         //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
         etudiantUnitMatEtu.setCellValueFactory(new PropertyValueFactory<>("MATRICULE_ETU"));
         etudiantUnitCode.setCellValueFactory(new PropertyValueFactory<>("CODE_UNITE"));
@@ -896,15 +885,20 @@ public class HomeController implements Initializable {
         }
                 
         etudiantUnit.setItems(etudiantUnitData);
-        
+    }
+    
+    public void getDataFromEnseignantTable()
+    {
         
         //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
         enseignantMatTable.setCellValueFactory(new PropertyValueFactory<>("MATRICULE_ENS"));
         enseignantNomTable.setCellValueFactory(new PropertyValueFactory<>("NOM_ENS"));
         enseignantPrenomTable.setCellValueFactory(new PropertyValueFactory<>("PRENOM_ENS"));
         
-        etudiantData = FXCollections.observableArrayList();   
-    
+        enseignantData = FXCollections.observableArrayList();   
+        
+        Connection connection;
+
         try {
         
         connection = Database.getConnectionDb();
@@ -915,17 +909,19 @@ public class HomeController implements Initializable {
         ResultSet rs = preparedStatement.executeQuery(sql );
         
         while (rs.next()) {	
-                etudiantData.add(new Enseignant(rs.getInt("MATRICULE_ENS"),rs.getString("NOM_ENS"),rs.getString("PRENOM_ENS")));
+                enseignantData.add(new Enseignant(rs.getInt("MATRICULE_ENS"),rs.getString("NOM_ENS"),rs.getString("PRENOM_ENS")));
         }
         
         } catch (SQLException ex) {
             Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
         }
                 
-        enseignant.setItems(etudiantData);
+        enseignant.setItems(enseignantData);
         
-        
-        
+    }
+    
+    public void getDataFromEnseignantUniteTable()
+    {
         
         //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
         uniteCu.setCellValueFactory(new PropertyValueFactory<>("CODE_UNITE"));
@@ -934,7 +930,9 @@ public class HomeController implements Initializable {
         uniteMe.setCellValueFactory(new PropertyValueFactory<>("MATRICULE_ENS"));
         
         uniteData = FXCollections.observableArrayList();    
-    
+        
+        Connection connection;
+
         try {
         
         connection = Database.getConnectionDb();
@@ -954,6 +952,31 @@ public class HomeController implements Initializable {
                 
         unite.setItems(uniteData);
         
+    }
+    
+    
+    
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+        group1 = new ToggleGroup();
+        radio1.setText("Etudiant");
+        radio2.setText("EtudiantUnite");
+        radio3.setText("Enseignant");
+        radio4.setText("Unite");
+        radio1.setToggleGroup(group1);
+        radio2.setToggleGroup(group1);
+        radio3.setToggleGroup(group1);
+        radio4.setToggleGroup(group1);
+        
+        getDataFromEtudiantTable();
+        getDataFromEtudiantUniteTable(); 
+        getDataFromEnseignantTable(); 
+        getDataFromEnseignantUniteTable();                 
+         
         
         
     } 
