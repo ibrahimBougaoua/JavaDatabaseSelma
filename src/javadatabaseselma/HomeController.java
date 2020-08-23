@@ -36,6 +36,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javadatabaseselma.Etudiant;
 import javafx.scene.SceneAntialiasing;
+import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.layout.AnchorPane;
 
@@ -535,6 +536,11 @@ public class HomeController implements Initializable {
                             ps.executeUpdate();
                             insertResult1.setText("Etudiant added successfully !");
                             insertResult1.setTextFill(Color.GREEN);
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Etudiant ajouté avec succès! !");
+                            alert.setHeaderText("les information de Etudiant");
+                            alert.setContentText("Matrcule : " + Matricule_etu.getText() + "\nNom : " + nom_etu.getText() + "\nPrenom : " + prenom_etu.getText() + "\nDate naissance : " + date_naissance.getText().toString());
+                            alert.showAndWait();
                         }
                     }
                 }
